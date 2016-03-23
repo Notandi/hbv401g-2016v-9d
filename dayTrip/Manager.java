@@ -6,6 +6,10 @@ public class Manager<T> {
 	
 	private ArrayList<T> ManagedObjects;
 	
+	public Manager()
+	{
+		ManagedObjects = new ArrayList<T>();		
+	}
 	public ArrayList<T> search(Query query){
 		ArrayList<T> a = new ArrayList<T>();
 		return a;		
