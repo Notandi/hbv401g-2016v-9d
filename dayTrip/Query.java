@@ -1,5 +1,7 @@
 package dayTrip;
 
+import java.util.ArrayList;
+
 public class Query {
 	
 	private String[] keyWords;
@@ -11,9 +13,15 @@ public class Query {
 		this.keyWords = this.generateKeyWords(searchString);
 	}
 	
-	public String[] generateKeyWords(String searchString) {
+	public ArrayList generateKeyWords(String searchString) {
 		
-		String[] bla = new String[2];
-		return bla;
+		ArrayList words = new ArrayList();
+		
+		for(int i = 0; i < searchString.length(); i++) {
+			
+			if(ArrayList.le)
+		}
+		
+		return words;
 	}
 }
