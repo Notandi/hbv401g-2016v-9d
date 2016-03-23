@@ -1,6 +1,6 @@
 package dayTrip;
 
-public class BookingManager implements Manager {
+public class BookingManager extends Manager<Booking> {
 
 	private Booking[] bookings;
 }
