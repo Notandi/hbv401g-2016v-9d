@@ -1,5 +1,6 @@
 package dayTrip;
 
-public class AttractionManager {
-
+public class AttractionManager implements Manager {
+	
+	private Attraction[] 
 }
