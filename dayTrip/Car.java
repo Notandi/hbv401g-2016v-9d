@@ -1,12 +1,22 @@
 package dayTrip;
 
 public class Car {
-	private String Type;
-	private String Description;
-	private	String Picture;
-	private int Price;
-	private String Keywords;
+	private String type;
+	private String description;
+	private	String picture;
+	private int price;
+	private String keywords;
+	
+	public Car(String type, String description, String picture, int price, String keywords) {
+		
+		this.type = type;
+		this.description = description;
+		this.picture = picture;
+		this.price = price;
+		this.keywords = keywords;
+	}
+	
 	public void changePrices(int price){
-		this.Price = price;
-	};
+		this.price = price;
+	}
 }
