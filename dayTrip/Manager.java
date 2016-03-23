@@ -1,12 +1,12 @@
 package dayTrip;
 
 
-public abstract class Manager<T> {
+public class  Manager<T> {
 	
 	private T[] ManagedObjects;
 	
-	public abstract <T> T[] search(Query query);
-	public abstract <T> void addObject(T t);
-	public abstract <T> void removeObject(T t);
+	public T[] search(Query query);
+	public void addObject(T t);
+	public void removeObject(T t);
 
 }
