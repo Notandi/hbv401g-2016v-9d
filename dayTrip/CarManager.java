@@ -1,6 +1,6 @@
 package dayTrip;
 
-public class CarManager implements Manager {
+public class CarManager extends Manager<Car> {
 
-	private Car[] cars;
+	
 }

@@ -1,12 +1,16 @@
 package dayTrip;
+import java.util.ArrayList;
 
 
-public class  Manager<T> {
+public class Manager<T> {
 	
-	private T[] ManagedObjects;
+	private ArrayList<T> ManagedObjects;
 	
-	public T[] search(Query query);
-	public void addObject(T t);
-	public void removeObject(T t);
+	public ArrayList<T> search(Query query){
+		ArrayList<T> a = new ArrayList<T>();
+		return a;		
+	};
+	public void addObject(T t){};
+	public void removeObject(T t){};
 
 }
