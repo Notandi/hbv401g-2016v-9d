@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Query {
 	
 	private ArrayList keyWords;
-	private Boolean[] filters;
+	private String[] filters;
 	
-	public Query(String searchString, Boolean[] filters) {
+	public Query(String searchString, String[] filters) {
 		
 		this.filters = filters;		
 		this.keyWords = this.generateKeyWords(searchString);
@@ -22,7 +22,7 @@ public class Query {
 			
 			if(searchString.charAt(i) == '\0') {
 				
-				words.add(searchString.substring(firstLetter, i));				
+				words.add(searchString.substring(firstLetter, i));		
 				firstLetter++;
 			}
 		}
