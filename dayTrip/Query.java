@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Query {
 	
-	private String[] keyWords;
+	private ArrayList keyWords;
 	private Boolean[] filters;
 	
 	public Query(String searchString, Boolean[] filters) {
@@ -16,10 +16,15 @@ public class Query {
 	public ArrayList generateKeyWords(String searchString) {
 		
 		ArrayList words = new ArrayList();
+		int firstLetter = 0;
 		
 		for(int i = 0; i < searchString.length(); i++) {
 			
-			if(ArrayList.le)
+			if(searchString.charAt(i) == '\0') {
+				
+				words.add(searchString.substring(firstLetter, i));				
+				firstLetter++;
+			}
 		}
 		
 		return words;
