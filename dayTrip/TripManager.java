@@ -1,5 +1,6 @@
 package dayTrip;
 
-public class TripManager {
+public class TripManager implements Manager {
 
+	private Trip[] trips;
 }

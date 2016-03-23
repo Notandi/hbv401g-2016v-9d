@@ -1,5 +1,6 @@
 package dayTrip;
 
-public class BookingManager {
+public class BookingManager implements Manager {
 
+	private Booking[] bookings;
 }
