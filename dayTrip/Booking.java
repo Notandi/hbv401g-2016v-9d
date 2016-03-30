@@ -1,18 +1,22 @@
 package dayTrip;
+import java.util.ArrayList;
 
 public class Booking {
 	
 	private String customer;
-	private Trip[] trips;
-	private Car[] cars;
+	private ArrayList<Trip> trips;
+	private ArrayList<Car> cars;
 	private int price;
 	private int numOfPeople;
 	
-	public Booking(String customer, Trip[] trips, Car[] cars, int price, int numOfPeople) {
+	public Booking(String customer, Trip trips, Car cars, int price, int numOfPeople) {
+		
+		this.trips = new ArrayList<Trip>();
+		this.cars = new ArrayList<Car>();
 		
 		this.setCustomer(customer);
-		this.setTrips(trips);
-		this.setCars(cars);
+		this.addTrip(trips);
+		this.addCar(cars);
 		this.setPrice(price);
 		this.setNumOfPeople(numOfPeople);
 	}
@@ -29,20 +33,20 @@ public class Booking {
 		this.customer = customer;
 	}
 
-	public Trip[] getTrips() {
+	public ArrayList<Trip> getTrips() {
 		return trips;
 	}
 
-	public void setTrips(Trip[] trips) {
-		this.trips = trips;
+	public void addTrip(Trip trip) {
+		if(trip != null) this.trips.add(trip);
 	}
 
-	public Car[] getCars() {
+	public ArrayList<Car> getCars() {
 		return cars;
 	}
 
-	public void setCars(Car[] cars) {
-		this.cars = cars;
+	public void addCar(Car car) {
+		if(car != null) this.cars.add(car);
 	}
 
 	public int getPrice() {
