@@ -6,10 +6,15 @@ public class Query {
 	
 	private ArrayList<String> keyWords;
 	private ArrayList<String> filters;
+	private int type;
 	private String[] ignoreWords = {"or", "and"};
 	
-	public Query(String searchString, ArrayList<String> filters) {
+	public Query(int type, String searchString, ArrayList<String> filters) {
 		
+		this.keyWords = new ArrayList<String>();
+		this.filters = new ArrayList<String>();
+		
+		this.setType(type);
 		this.filters = filters;		
 		this.keyWords = this.generateKeyWords(searchString);
 	}
@@ -43,5 +48,13 @@ public class Query {
 		}
 		
 		return false;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}
 }

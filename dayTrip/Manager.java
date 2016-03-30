@@ -16,7 +16,6 @@ public class Manager<T> {
 	};
 	public void addObject(T t){ManagedObjects.add(t);};
 	
-	//
 	public void removeObject(T t){
 		
 		
