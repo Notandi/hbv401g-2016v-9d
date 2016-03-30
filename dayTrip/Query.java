@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Query {
 	
-	private ArrayList keyWords;
-	private String[] filters;
+	private ArrayList<String> keyWords;
+	private ArrayList<String> filters;
 	
-	public Query(String searchString, String[] filters) {
+	public Query(String searchString, ArrayList<String> filters) {
 		
 		this.filters = filters;		
 		this.keyWords = this.generateKeyWords(searchString);
 	}
 	
-	public ArrayList generateKeyWords(String searchString) {
+	public ArrayList<String> generateKeyWords(String searchString) {
 		
-		ArrayList words = new ArrayList();
+		ArrayList<String> words = new ArrayList<String>();
 		int firstLetter = 0;
 		
 		for(int i = 0; i < searchString.length(); i++) {
