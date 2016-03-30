@@ -1,5 +1,7 @@
 package dayTrip;
 
+import java.util.ArrayList;
+
 public class Trip {
 	private int  popularity;
 	private String location;
@@ -7,13 +9,14 @@ public class Trip {
 	private String description;
 	private int price;
 	private String transportation;
-	private String[] reviews;
-	private int[] ratings;
+	private ArrayList<String> reviews;
+	private ArrayList<Integer> ratings;
 	private String picture;
-	private Attraction[] attraction;
+	private ArrayList<Attraction> attractions;
 	private String keywords;
 	
-	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, String[] reviews, int[] ratings, String picture, Attraction[] attraction, String keywords) {
+	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, ArrayList<String> reviews, ArrayList<Integer> ratings, String picture, ArrayList<Attraction> attractions, String keywords) {
+		this.init();
 		this.setPopularity(popularity);
 		this.setLocation(location);
 		this.setDifficulty(difficulty);
@@ -25,6 +28,14 @@ public class Trip {
 		this.setAttraction(attraction);
 		this.setKeywords(keywords);
 	}
+	
+	public void init()
+	{
+		reviews = new ArrayList<String>();
+		ratings = new ArrayList<Integer>();
+		attractions = new ArrayList<Attraction>();		
+	}
+	
 	public void addReview(String review){
 		
 	}
@@ -76,11 +87,15 @@ public class Trip {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	public Attraction[] getAttraction() {
-		return attraction;
+	public ArrayList<Attraction> getAttraction() {
+		return this.attractions;
 	}
-	public void setAttraction(Attraction[] attraction) {
-		this.attraction = attraction;
+	public void addAttraction(Attraction[] attractions) {
+		if(attractions == null) return;
+		for(int i = 0; i<attractions.length; i++)
+		{
+			this.attractions.add(attractions[i]);
+		}
 	}
 	public String getKeywords() {
 		return keywords;
@@ -88,7 +103,7 @@ public class Trip {
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
 	}
-	public int[] getRatings() {
+	public ArrayList<Integer> getRatings() {
 		return ratings;
 	}
 	public void setRatings(int[] ratings) {
