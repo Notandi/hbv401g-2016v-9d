@@ -6,6 +6,7 @@ public class Query {
 	
 	private ArrayList<String> keyWords;
 	private ArrayList<String> filters;
+	private String[] ignoreWords = {"or", "and"};
 	
 	public Query(String searchString, ArrayList<String> filters) {
 		
@@ -22,11 +23,25 @@ public class Query {
 			
 			if(searchString.charAt(i) == '\0') {
 				
-				words.add(searchString.substring(firstLetter, i));		
-				firstLetter++;
+				String word = searchString.substring(firstLetter, i);
+				
+				if(!isIgnoreWord(word))
+					words.add(word);		
+				
+				firstLetter = i;
 			}
 		}
 		
 		return words;
+	}
+	
+	public boolean isIgnoreWord(String word) {
+		
+		for(int i = 0; i < ignoreWords.length; i++) {
+			
+			if(word.equals(ignoreWords[i])) return true;
+		}
+		
+		return false;
 	}
 }
