@@ -14,8 +14,9 @@ public class Trip {
 	private String picture;
 	private ArrayList<Attraction> attractions;
 	private String keywords;
+	private double rating;
 	
-	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, ArrayList<String> reviews, ArrayList<Integer> ratings, String picture, ArrayList<Attraction> attractions, String keywords) {
+	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, String[] reviews, int[] ratings, String picture, Attraction[] attractions, String keywords) {
 		this.init();
 		this.setPopularity(popularity);
 		this.setLocation(location);
@@ -25,7 +26,7 @@ public class Trip {
 		this.setTransportation(transportation);
 		this.setReviews(reviews);
 		this.setPicture(picture);
-		this.setAttraction(attraction);
+		this.setAttraction(attractions);
 		this.setKeywords(keywords);
 	}
 	
@@ -36,21 +37,14 @@ public class Trip {
 		attractions = new ArrayList<Attraction>();		
 	}
 	
-	public void addReview(String review){
-		
-	}
+	public void addReview(String review){this.reviews.add(review);}	
+	public void addrating(int rating){this.ratings.add(rating);}
+	public void addAttratction(Attraction attraction){this.attractions.add(attraction);}
 	
 	public void changePopularity(int difference){
 		
 	}
-	
-	public void changePrice(int price){
 		
-	}
-	
-	public void rate(int rating){
-		
-	}
 	public int getPrice() {
 		return price;
 	}
@@ -69,11 +63,15 @@ public class Trip {
 	public void setTransportation(String transportation) {
 		this.transportation = transportation;
 	}
-	public String[] getReviews() {
+	public ArrayList<String> getReviews() {
 		return reviews;
 	}
 	public void setReviews(String[] reviews) {
-		this.reviews = reviews;
+		if(reviews == null) return;
+		for(int i = 0; i<reviews.length; i++)
+		{
+			this.reviews.add(reviews[i]);
+		}
 	}
 	public int getPopularity() {
 		return popularity;
@@ -90,7 +88,7 @@ public class Trip {
 	public ArrayList<Attraction> getAttraction() {
 		return this.attractions;
 	}
-	public void addAttraction(Attraction[] attractions) {
+	public void setAttraction(Attraction[] attractions) {
 		if(attractions == null) return;
 		for(int i = 0; i<attractions.length; i++)
 		{
@@ -107,7 +105,11 @@ public class Trip {
 		return ratings;
 	}
 	public void setRatings(int[] ratings) {
-		this.ratings = ratings;
+		if(ratings == null) return;
+		for(int i = 0; i<ratings.length; i++)
+		{
+			this.ratings.add(ratings[i]);
+		}
 	}
 	public int getDifficulty() {
 		return difficulty;
@@ -120,5 +122,13 @@ public class Trip {
 	}
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
 	}
 }
