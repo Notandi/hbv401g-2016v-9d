@@ -6,14 +6,16 @@ public class Car {
 	private	String picture;
 	private int price;
 	private String keywords;
+	private boolean availability;
 	
-	public Car(String type, String description, String picture, int price, String keywords) {
+	public Car(String type, String description, String picture, int price, String keywords, boolean availability) {
 		
 		this.setType(type);
 		this.setDescription(description);
 		this.setPicture(picture);
 		this.setPrice(price);
 		this.setKeywords(keywords);
+		this.setAvailability(availability);
 	}
 	
 	public void changePrices(int price){
@@ -58,5 +60,13 @@ public class Car {
 
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
+	}
+
+	public boolean isAvailability() {
+		return availability;
+	}
+
+	public void setAvailability(boolean availability) {
+		this.availability = availability;
 	}
 }
