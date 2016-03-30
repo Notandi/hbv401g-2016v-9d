@@ -7,10 +7,19 @@ public class UserInterface {
 	
 	public UserInterface()
 	{
-		filters = new ArrayList<String>();
+		setFilters(new ArrayList<String>());
 	}
 	
 	public void removeFilter(String filter){};
+	public int getManager() {return manager;}
 	public void setManager(int newManager){this.manager = newManager;}
+
+	public ArrayList<String> getFilters() {
+		return filters;
+	}
+
+	public void setFilters(ArrayList<String> filters) {
+		this.filters = filters;
+	}
 
 }

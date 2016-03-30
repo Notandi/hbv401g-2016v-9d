@@ -15,15 +15,15 @@ public class Trip {
 	
 	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, String[] reviews, int[] ratings, String picture, Attraction[] attraction, String keywords) {
 		this.setPopularity(popularity);
-		this.location = location;
-		this.difficulty = difficulty;
+		this.setLocation(location);
+		this.setDifficulty(difficulty);
 		this.setDescription(description);
 		this.setPrice(price);
 		this.setTransportation(transportation);
 		this.setReviews(reviews);
-		this.picture = picture;
-		this.attraction = attraction;
-		this.keywords = keywords;
+		this.setPicture(picture);
+		this.setAttraction(attraction);
+		this.setKeywords(keywords);
 	}
 	public void addReview(String review){
 		
@@ -69,5 +69,41 @@ public class Trip {
 	}
 	public void setPopularity(int popularity) {
 		this.popularity = popularity;
+	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+	public Attraction[] getAttraction() {
+		return attraction;
+	}
+	public void setAttraction(Attraction[] attraction) {
+		this.attraction = attraction;
+	}
+	public String getKeywords() {
+		return keywords;
+	}
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
+	}
+	public int[] getRatings() {
+		return ratings;
+	}
+	public void setRatings(int[] ratings) {
+		this.ratings = ratings;
+	}
+	public int getDifficulty() {
+		return difficulty;
+	}
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
 	}
 }
