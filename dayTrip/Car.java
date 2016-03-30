@@ -5,10 +5,10 @@ public class Car {
 	private String description;
 	private	String picture;
 	private int price;
-	private String keywords;
+	private String[] keywords;
 	private boolean availability;
 	
-	public Car(String type, String description, String picture, int price, String keywords, boolean availability) {
+	public Car(String type, String description, String picture, int price, String[] keywords, boolean availability) {
 		
 		this.setType(type);
 		this.setDescription(description);
@@ -54,11 +54,11 @@ public class Car {
 		this.price = price;
 	}
 
-	public String getKeywords() {
+	public String[] getKeywords() {
 		return keywords;
 	}
 
-	public void setKeywords(String keywords) {
+	public void setKeywords(String[] keywords) {
 		this.keywords = keywords;
 	}
 
