@@ -14,7 +14,12 @@ public class Manager<T> {
 		ArrayList<T> a = new ArrayList<T>();
 		return a;		
 	};
-	public void addObject(T t){};
-	public void removeObject(T t){};
+	public void addObject(T t){ManagedObjects.add(t);};
+	
+	//
+	public void removeObject(T t){
+		
+		
+	};
 
 }
