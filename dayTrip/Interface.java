@@ -6,6 +6,7 @@ public class Interface {
 	private CarManager carManager;
 	private CustomerManager customerManager;
 	private TripManager tripManager;
+	private DatabaseInterface databaseInterface;
 	
 	public Interface()
 	{
@@ -54,5 +55,13 @@ public class Interface {
 
 	public void setTripManager(TripManager tripManager) {
 		this.tripManager = tripManager;
+	}
+
+	public DatabaseInterface getDatabaseInterface() {
+		return databaseInterface;
+	}
+
+	public void setDatabaseInterface(DatabaseInterface databaseInterface) {
+		this.databaseInterface = databaseInterface;
 	}
 }
