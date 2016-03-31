@@ -1,27 +1,58 @@
 package dayTrip;
 
-import java.util.ArrayList;
-
 public class Interface {
 	private AttractionManager attractionManager;
 	private BookingManager bookingManager;
 	private CarManager carManager;
 	private CustomerManager customerManager;
 	private TripManager tripManager;
-	private int manager;
-	private ArrayList<String> filters;
 	
 	public Interface()
 	{
-		this.attractionManager = new AttractionManager();
-		this.bookingManager = new BookingManager();
-		this.carManager = new CarManager();
-		this.customerManager = new CustomerManager();
-		this.tripManager = new TripManager();
-		this.filters = new ArrayList<String>();
+		this.setAttractionManager(new AttractionManager());
+		this.setBookingManager(new BookingManager());
+		this.setCarManager(new CarManager());
+		this.setCustomerManager(new CustomerManager());
+		this.setTripManager(new TripManager());
 	}
-	
-	public void removeFilter(String filter){};
-	public void setManager(int newManager){this.manager = newManager;}
 
+	public AttractionManager getAttractionManager() {
+		return attractionManager;
+	}
+
+	public void setAttractionManager(AttractionManager attractionManager) {
+		this.attractionManager = attractionManager;
+	}
+
+	public BookingManager getBookingManager() {
+		return bookingManager;
+	}
+
+	public void setBookingManager(BookingManager bookingManager) {
+		this.bookingManager = bookingManager;
+	}
+
+	public CarManager getCarManager() {
+		return carManager;
+	}
+
+	public void setCarManager(CarManager carManager) {
+		this.carManager = carManager;
+	}
+
+	public CustomerManager getCustomerManager() {
+		return customerManager;
+	}
+
+	public void setCustomerManager(CustomerManager customerManager) {
+		this.customerManager = customerManager;
+	}
+
+	public TripManager getTripManager() {
+		return tripManager;
+	}
+
+	public void setTripManager(TripManager tripManager) {
+		this.tripManager = tripManager;
+	}
 }
