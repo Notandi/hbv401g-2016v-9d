@@ -6,3 +6,10 @@
 # BookingManager : 4
 # CustomerManager : 5
 
+#res meaning
+# null manager variable not in the range 1-5
+# -1 search failed
+#  1 search succeeded
+
+
+

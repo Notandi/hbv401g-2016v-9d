@@ -13,9 +13,9 @@ public class Manager<T> {
 		this.databaseInterface =  databaseInterface;
 	}
 	
-	public ArrayList<T> search(Query query){
-		ArrayList<T> a = new ArrayList<T>();
-		return a;		
+	public ArrayList<?> search(Query query){
+		ArrayList<?> res = this.databaseInterface.select(query);
+		return res;
 	};
 	public void addObject(T t){managedObjects.add(t);};	
 	public void syncManagedObjects(ArrayList<T> searchResults){managedObjects.addAll(searchResults);}

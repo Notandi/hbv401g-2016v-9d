@@ -3,12 +3,12 @@ package dayTrip;
 import java.util.ArrayList;
 
 public class Interface {
-	private AttractionManager attractionManager;
-	private BookingManager bookingManager;
-	private CarManager carManager;
-	private CustomerManager customerManager;
-	private TripManager tripManager;
-	private DatabaseInterface databaseInterface;
+	private static AttractionManager attractionManager;
+	private static BookingManager bookingManager;
+	private static CarManager carManager;
+	private static CustomerManager customerManager;
+	private static TripManager tripManager;
+	private static DatabaseInterface databaseInterface;
 	
 	public Interface()
 	{
@@ -77,20 +77,49 @@ public class Interface {
 			setFilters(new ArrayList<String>());
 		}
 		
-		public int search(String searchString)
+		public ArrayList<?> search(String searchString)
 		{
-			Query query = new Query(this.manager, searchString, this.filters);
-			
+			Query query = new Query(manager, searchString, this.filters);
+			ArrayList<?> res;
+			switch (manager){
+			case 1:
+				res = attractionManager.search(query);				
+				break;
+			case 2:
+				res = tripManager.search(query);
+				break;
+			case 3:
+				res = carManager.search(query);
+				break;
+			case 4:
+				res = bookingManager.search(query);
+				break;
+			case 5:
+				res = customerManager.search(query);
+				break;			
+			default:
+				res = null;
+			}
+		
+			return res;
 		}
 		
-		public void removeFilter(String filter){};
+		public void removeFilter(String filter){
+			this.filters.remove(filter);			
+		};
+		
 		public int getManager() {return manager;}
+		
 		public void setManager(int newManager){this.manager = newManager;}
 
 		public ArrayList<String> getFilters() {
 			return filters;
 		}
 
+		public void addFilter(String filter){
+			this.filters.add(filter);
+		}
+		
 		public void setFilters(ArrayList<String> filters) {
 			this.filters = filters;
 		}
