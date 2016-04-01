@@ -8,12 +8,12 @@ public class DatabaseInterface {
 	{
 		int manager = query.getType();
 		switch(manager){
-		case 1: ArrayList<Car> mockresultCar = MockData.MockCar(query);
-				return mockresultCar;
-		case 2:	ArrayList<Attraction> mockresultAttraction =  MockData.MockAttraction(query);
+		case 1:	ArrayList<Attraction> mockresultAttraction =  MockData.MockAttraction(query);
 				return mockresultAttraction;
-		case 3: ArrayList<Trip> mockresultTrip = MockData.MockTrip(query);
+		case 2: ArrayList<Trip> mockresultTrip = MockData.MockTrip(query);
 				return mockresultTrip;
+		case 3: ArrayList<Car> mockresultCar = MockData.MockCar(query);
+				return mockresultCar;
 		case 4:	ArrayList<Booking> mockresultBooking = MockData.MockBooking(query);
 				return mockresultBooking;
 		case 5: ArrayList<Customer> mockresultCustomer = MockData.MockCustomer(query);
