@@ -23,7 +23,7 @@ public class DatabaseInterface {
 	}
 	
 	public int insert(Pair[] query)
-	{
+	{		
 		return -1;
 	}
 	

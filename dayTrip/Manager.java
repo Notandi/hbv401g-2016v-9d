@@ -25,13 +25,13 @@ public class Manager<T> {
 		Pair[] query = new Pair[fields.length];
 		switch (manager){
 			case 1:
-				query[0] = new Pair("Table","Car");
+				query[0] = new Pair("Table", "Attraction");				
 				break;
 			case 2:
 				query[0] = new Pair("Table", "Trip");
 				break;
 			case 3:
-				query[0] = new Pair("Table", "Attraction");
+				query[0] = new Pair("Table","Car");
 				break;
 			case 4:
 				query[0] = new Pair("Table", "Booking");

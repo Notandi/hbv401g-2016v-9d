@@ -77,6 +77,12 @@ public class Interface {
 			setFilters(new ArrayList<String>());
 		}
 		
+		public int search(String searchString)
+		{
+			Query query = new Query(this.manager, searchString, this.filters);
+			
+		}
+		
 		public void removeFilter(String filter){};
 		public int getManager() {return manager;}
 		public void setManager(int newManager){this.manager = newManager;}
