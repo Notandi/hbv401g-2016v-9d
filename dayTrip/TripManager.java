@@ -6,4 +6,5 @@ public class TripManager extends Manager<Trip> {
 	{
 		super(databaseInterface);
 	}
+	
 }

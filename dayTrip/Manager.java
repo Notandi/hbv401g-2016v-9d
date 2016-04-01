@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Manager<T> {
 	
-	private ArrayList<T> ManagedObjects;
+	private ArrayList<T> managedObjects;
 	private DatabaseInterface databaseInterface;
 	
 	public Manager(DatabaseInterface databaseInterface)
 	{
-		ManagedObjects = new ArrayList<T>();	
+		managedObjects = new ArrayList<T>();	
 		this.databaseInterface =  databaseInterface;
 	}
 	/*public Manager() {
@@ -19,8 +19,8 @@ public class Manager<T> {
 		ArrayList<T> a = new ArrayList<T>();
 		return a;		
 	};
-	public void addObject(T t){ManagedObjects.add(t);};	
-	public void syncManagedObjects(ArrayList<T> searchResults){ManagedObjects.addAll(searchResults);}
+	public void addObject(T t){managedObjects.add(t);};	
+	public void syncManagedObjects(ArrayList<T> searchResults){managedObjects.addAll(searchResults);}
 	
 	public int createObject(int manager, String[] fields, String[] values)
 	{
