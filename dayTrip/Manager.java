@@ -12,9 +12,7 @@ public class Manager<T> {
 		managedObjects = new ArrayList<T>();	
 		this.databaseInterface =  databaseInterface;
 	}
-	/*public Manager() {
-		// TODO Auto-generated constructor stub
-	}*/
+	
 	public ArrayList<T> search(Query query){
 		ArrayList<T> a = new ArrayList<T>();
 		return a;		
