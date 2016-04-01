@@ -5,11 +5,16 @@ import java.util.ArrayList;
 public class Manager<T> {
 	
 	private ArrayList<T> ManagedObjects;
+	private DatabaseInterface databaseInterface;
 	
-	public Manager()
+	public Manager(DatabaseInterface databaseInterface)
 	{
-		ManagedObjects = new ArrayList<T>();		
+		ManagedObjects = new ArrayList<T>();	
+		this.databaseInterface =  databaseInterface;
 	}
+	/*public Manager() {
+		// TODO Auto-generated constructor stub
+	}*/
 	public ArrayList<T> search(Query query){
 		ArrayList<T> a = new ArrayList<T>();
 		return a;		
@@ -44,7 +49,7 @@ public class Manager<T> {
 		}
 		
 		
-		if(Interface.getDatabaseInterface().select(query) == 1) return 1;
+		if(this.databaseInterface.insert(query) == 1) return 1;
 		
 		return -1;
 				
