@@ -12,11 +12,12 @@ public class Interface {
 	
 	public Interface()
 	{
-		this.setAttractionManager(new AttractionManager());
-		this.setBookingManager(new BookingManager());
-		this.setCarManager(new CarManager());
-		this.setCustomerManager(new CustomerManager());
-		this.setTripManager(new TripManager());
+		this.setDatabaseInterface(new DatabaseInterface());
+		this.setAttractionManager(new AttractionManager(databaseInterface));
+		this.setBookingManager(new BookingManager(databaseInterface));
+		this.setCarManager(new CarManager(databaseInterface));
+		this.setCustomerManager(new CustomerManager(databaseInterface));
+		this.setTripManager(new TripManager(databaseInterface));
 	}
 
 	public AttractionManager getAttractionManager() {
