@@ -7,6 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class DatabaseInterfaceTest {
+	private Attraction AttractionObj, TestAttraction;
+	private Trip TripObj, TestTrip;
+	private Car CarObj, TestCar;
+	private Booking BookingObj,TestBooking;
+	private Customer CustomerObj, TestCustomer;
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,24 +22,57 @@ public class DatabaseInterfaceTest {
 		Query BookingQuery = new Query(4,"Booking",null);
 		Query CustomerQuery = new Query (5,"Customer", null);
 		DataBlock AttractionRes = databaseInterface.select(AttractionQuery);
-		Attraction AttractionObj = AttractionRes.getAttractions().get(0);
+		AttractionObj = AttractionRes.getAttractions().get(0);
 		DataBlock TripRes = databaseInterface.select(TripQuery);
-		Trip TripObj = TripRes.getTrips().get(0);
+		TripObj = TripRes.getTrips().get(0);
 		DataBlock CarRes = databaseInterface.select(CarQuery);
-		Car CarObj = CarRes.getCars().get(0);
+		CarObj = CarRes.getCars().get(0);
 		DataBlock BookingRes = databaseInterface.select(BookingQuery);
-		Booking BookingObj = BookingRes.getBookings().get(0); 
+		BookingObj = BookingRes.getBookings().get(0); 
 		DataBlock CustomerRes = databaseInterface.select(CustomerQuery);
-		Customer CustomerObj = CustomerRes.getCustomers().get(0);
+		CustomerObj = CustomerRes.getCustomers().get(0);
+		
+		TestAttraction =  new Attraction("Natural wonder","Grindavík", "Eðal bær, mjög fallegur.", "link");
+		String[] keywords = {"Hvalfjörður", "göngutúr"};
+		TestTrip = new Trip(0, "Hvalfjörður", 2, "Göngutúr um fallegt landsvæði.", 1500, "Bus", null, null, "link", null, keywords);
+		String[] keywords2 = {"jeppi", "97"};
+		TestCar = new Car("Ford 356", "97 model, jeppi, kemst hvert sem er.", "link", 30000, keywords2, true);
+		TestBooking = new Booking("Jonathan Blake jr.", null, null, 14000, 6);
+		TestCustomer = new Customer("Ósk Ólafsdóttir", 15, "Female", "Indian", "iamindian@india.in");
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		AttractionObj = null;
+		TestAttraction = null;
+		TripObj = null; 
+		TestTrip = null;
+		CarObj = null; 
+		TestCar = null;
+		BookingObj = null;
+		TestBooking = null;
+		CustomerObj = null;
+		TestCustomer = null;
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testAttractionQuery() {
+		assertSame(TestAttraction.getDescription(), AttractionObj.getDescription());
+	}
+	@Test
+	public void testTripQuery() {
+		assertSame(TestTrip.getDescription() , TripObj.getDescription());
+	}
+	@Test
+	public void testCarQuery() {
+		assertSame(TestCar.getDescription(), CarObj.getDescription());
+	}
+	@Test
+	public void testBookingQuery() {
+		assertSame(TestBooking.getPrice(), BookingObj.getPrice());
+	}@Test
+	public void testCustomerQuery() {
+		assertSame(TestCustomer.getAge(), CustomerObj.getAge());
 	}
 
 }
