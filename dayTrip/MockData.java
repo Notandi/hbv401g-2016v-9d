@@ -11,7 +11,7 @@ public class MockData {
 		return carArray;
 	}
 	public static ArrayList<Attraction> MockAttraction(Query query){
-		Attraction mockattraction = new Attraction(null, null, null, null);
+		Attraction mockattraction = new Attraction("epli","banani", "geitungur", "gull");
 		ArrayList<Attraction> attractionArray = new ArrayList<Attraction>();
 		attractionArray.add(mockattraction);
 		return attractionArray;

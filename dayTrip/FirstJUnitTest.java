@@ -12,9 +12,12 @@ public class FirstJUnitTest {
 	public void test() {
 		DatabaseInterface databaseInterface = new DatabaseInterface();
 		Query query = new Query(1, "what", null);
-		ArrayList<?> testDeida = databaseInterface.select(query);
-		System.out.println(testDeida.get(0));
-		assertEquals(testDeida.get(0).getClass(), MockData.MockAttraction(query).get(0).getClass());
+		DataBlock testDeida = databaseInterface.select(query);
+		Attraction testDeidaDeida = testDeida.getAttractions().get(0);
+		assertEquals(testDeidaDeida.getType(), "epli");
+		assertEquals(testDeidaDeida.getLocation(), "banani");
+		assertEquals(testDeidaDeida.getDescription(),"geitungur");
+		assertEquals(testDeidaDeida.getPicture(),"gull");
 	}
 
 }
