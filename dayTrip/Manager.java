@@ -1,7 +1,5 @@
 package dayTrip;
 
-
-
 public class Manager {
 	
 	private DataBlock managedObjects;
@@ -46,10 +44,10 @@ public class Manager {
 		
 	}
 	
-	public int createObject(int manager, String[] fields, String[] values)
+	public Pair[] constructPairs(String[] fields, String[] values)
 	{
 		Pair[] query = new Pair[fields.length];
-		switch (manager){
+		switch (this.type){
 			case 1:
 				query[0] = new Pair("Table", "Attraction");				
 				break;
@@ -72,15 +70,21 @@ public class Manager {
 			query[i] = new Pair(fields[i], values[i]);
 		}
 		
+		return query;
+	}
+	
+	public int createObject(String[] fields, String[] values)
+	{		
 		
-		if(this.databaseInterface.insert(query) == 1) return 1;
-		
+		if(this.databaseInterface.insert(constructPairs(fields,values)) == 1) return 1;		
 		return -1;
 				
 	}
 	
-	public void removeObject(){		
+	public int removeObject(String[] fields, String[] values){		
 		
+		if(this.databaseInterface.delete(constructPairs(fields,values)) == 1) return 1;		
+		return -1;
 	}
 
 	public int getType() {
