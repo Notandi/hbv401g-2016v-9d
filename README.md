@@ -8,8 +8,8 @@
 
 #res meaning
 # null manager variable not in the range 1-5
-# -1 search failed
-#  1 search succeeded
+# -1 failure
+#  1 success
 
 
 
