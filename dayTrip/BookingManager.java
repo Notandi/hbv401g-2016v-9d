@@ -1,10 +1,10 @@
 package dayTrip;
 
-public class BookingManager extends Manager<Booking> {
+public class BookingManager extends Manager {
 	
-	public BookingManager(DatabaseInterface databaseInterface)
+	public BookingManager(DatabaseInterface databaseInterface, int type)
 	{
-		super(databaseInterface);
+		super(databaseInterface, type);
 	}
 	
 	

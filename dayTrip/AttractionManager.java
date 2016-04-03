@@ -1,9 +1,9 @@
 package dayTrip;
 
-public class AttractionManager extends Manager<Attraction> {
+public class AttractionManager extends Manager {
 	
-	public AttractionManager(DatabaseInterface databaseInterface)
+	public AttractionManager(DatabaseInterface databaseInterface, int type)
 	{
-		super(databaseInterface);
+		super(databaseInterface, type);
 	}
 }

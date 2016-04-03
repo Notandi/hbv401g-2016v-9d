@@ -1,10 +1,10 @@
 package dayTrip;
 	
-public class CarManager extends Manager<Car> {
+public class CarManager extends Manager {
 	
-	public CarManager(DatabaseInterface databaseInterface)
+	public CarManager(DatabaseInterface databaseInterface, int type)
 	{
-		super(databaseInterface);
+		super(databaseInterface, type);
 	}
 	
 }

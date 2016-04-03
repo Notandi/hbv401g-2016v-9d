@@ -1,10 +1,10 @@
 package dayTrip;
 
-public class TripManager extends Manager<Trip> {
+public class TripManager extends Manager {
 
-	public TripManager(DatabaseInterface databaseInterface)
+	public TripManager(DatabaseInterface databaseInterface, int type)
 	{
-		super(databaseInterface);
+		super(databaseInterface, type);
 	}
 	
 }

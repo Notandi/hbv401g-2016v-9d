@@ -1,24 +1,50 @@
 package dayTrip;
-import java.util.ArrayList;
 
 
-public class Manager<T> {
+
+public class Manager {
 	
-	private ArrayList<T> managedObjects;
+	private DataBlock managedObjects;
 	private DatabaseInterface databaseInterface;
+	private int type;
 	
-	public Manager(DatabaseInterface databaseInterface)
+	public Manager(DatabaseInterface databaseInterface, int type)
 	{
-		managedObjects = new ArrayList<T>();	
+		this.setType(type);
+		managedObjects = new DataBlock(type);	
 		this.databaseInterface =  databaseInterface;
+		
 	}
 	
 	public DataBlock search(Query query){
 		DataBlock res = this.databaseInterface.select(query);
 		return res;
 	};
-	public void addObject(T t){managedObjects.add(t);};	
-	public void syncManagedObjects(ArrayList<T> searchResults){managedObjects.addAll(searchResults);}
+	public void syncManagedObjects(DataBlock searchResults){
+		
+		
+		int type = searchResults.getType();
+		switch(type){
+		case 1:	
+			this.managedObjects.getAttractions().addAll(searchResults.getAttractions());
+			break;
+		case 2: 
+			this.managedObjects.getTrips().addAll(searchResults.getTrips());
+			break;
+		case 3: 
+			this.managedObjects.getCars().addAll(searchResults.getCars());
+			break;
+		case 4:	
+			this.managedObjects.getBookings().addAll(searchResults.getBookings());
+			break;
+		case 5: 
+			this.managedObjects.getCustomers().addAll(searchResults.getCustomers());
+			break;
+			
+		}
+		
+		
+	}
 	
 	public int createObject(int manager, String[] fields, String[] values)
 	{
@@ -53,9 +79,16 @@ public class Manager<T> {
 				
 	}
 	
-	public void removeObject(T t){
+	public void removeObject(){		
 		
-		
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	};
 
 }

@@ -6,10 +6,10 @@ public class DatabaseInterface {
 	
 	public DataBlock select(Query query)
 	{
-		int manager = query.getType();
-		DataBlock res = new DataBlock();
+		int type = query.getType();
+		DataBlock res = new DataBlock(type);
 		
-		switch(manager){
+		switch(type){
 		case 1:	ArrayList<Attraction> mockresultAttraction =  MockData.MockAttraction(query);
 				res.setAttractions(mockresultAttraction);
 				break;

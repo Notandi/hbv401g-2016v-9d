@@ -1,9 +1,9 @@
 package dayTrip;
 
-public class CustomerManager extends Manager<Customer> {
+public class CustomerManager extends Manager {
 	
-	public CustomerManager(DatabaseInterface databaseInterface)
+	public CustomerManager(DatabaseInterface databaseInterface, int type)
 	{
-		super(databaseInterface);
+		super(databaseInterface, type);
 	}
 }

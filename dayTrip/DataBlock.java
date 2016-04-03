@@ -9,14 +9,16 @@ public class DataBlock {
 	private ArrayList<Car> cars;
 	private ArrayList<Customer> customers;
 	private ArrayList<Trip> trips;
+	private int type;
 	
-	public DataBlock() {
+	public DataBlock(int type) {
 		
 		this.setAttractions(new ArrayList<Attraction>());
 		this.setBookings(new ArrayList<Booking>());
 		this.setCars(new ArrayList<Car>());
 		this.setCustomers(new ArrayList<Customer>());
 		this.setTrips(new ArrayList<Trip>());
+		this.setType(type);
 	}
 
 	public ArrayList<Attraction> getAttractions() {
@@ -57,6 +59,14 @@ public class DataBlock {
 
 	public void setTrips(ArrayList<Trip> trips) {
 		this.trips = trips;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}
 	
 	
