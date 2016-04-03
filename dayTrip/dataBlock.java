@@ -2,7 +2,7 @@ package dayTrip;
 
 import java.util.ArrayList;
 
-public class dataBlock {
+public class DataBlock {
 	
 	private ArrayList<Attraction> attractions;
 	private ArrayList<Booking> bookings;
@@ -10,7 +10,7 @@ public class dataBlock {
 	private ArrayList<Customer> customers;
 	private ArrayList<Trip> trips;
 	
-	public dataBlock() {
+	public DataBlock() {
 		
 		this.setAttractions(new ArrayList<Attraction>());
 		this.setBookings(new ArrayList<Booking>());
