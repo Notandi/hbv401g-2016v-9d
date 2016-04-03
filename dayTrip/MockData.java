@@ -38,7 +38,7 @@ public class MockData {
 	}
 	// Returns an ArrayList containing a single Customer object.
 	public  static ArrayList<Customer> MockCustomer (Query query){
-		Customer mockcustomer = new Customer("Ósk Ólafsdóttir", 15, "Female", "Indian", "iamindian@india.in");
+		Customer mockcustomer = new Customer("Gunnþórunn Kona Rafnsdóttir", 15, "Female", "Indian", "iamindian@india.in");
 		ArrayList<Customer> customerArray = new ArrayList<Customer>();
 		customerArray.add(mockcustomer);
 		return customerArray;
