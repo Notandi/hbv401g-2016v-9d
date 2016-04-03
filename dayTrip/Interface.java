@@ -77,10 +77,10 @@ public class Interface {
 			setFilters(new ArrayList<String>());
 		}
 		
-		public ArrayList<?> search(String searchString)
+		public DataBlock search(String searchString)
 		{
 			Query query = new Query(manager, searchString, this.filters);
-			ArrayList<?> res;
+			DataBlock res;
 			switch (manager){
 			case 1:
 				res = attractionManager.search(query);				

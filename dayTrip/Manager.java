@@ -13,8 +13,8 @@ public class Manager<T> {
 		this.databaseInterface =  databaseInterface;
 	}
 	
-	public ArrayList<?> search(Query query){
-		ArrayList<?> res = this.databaseInterface.select(query);
+	public DataBlock search(Query query){
+		DataBlock res = this.databaseInterface.select(query);
 		return res;
 	};
 	public void addObject(T t){managedObjects.add(t);};	
