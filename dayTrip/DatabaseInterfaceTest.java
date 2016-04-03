@@ -12,10 +12,13 @@ public class DatabaseInterfaceTest {
 	private Car CarObj, TestCar;
 	private Booking BookingObj,TestBooking;
 	private Customer CustomerObj, TestCustomer;
+	private int deletion, insertion;
 
 	@Before
 	public void setUp() throws Exception {
 		DatabaseInterface databaseInterface = new DatabaseInterface();
+		CarManager carmanager = new CarManager(databaseInterface,3);
+		
 		Query AttractionQuery = new Query (1, "Attraction", null);
 		Query TripQuery = new Query(2,"Trip",null);
 		Query CarQuery = new Query(3,"Car",null);
@@ -31,6 +34,11 @@ public class DatabaseInterfaceTest {
 		BookingObj = BookingRes.getBookings().get(0); 
 		DataBlock CustomerRes = databaseInterface.select(CustomerQuery);
 		CustomerObj = CustomerRes.getCustomers().get(0);
+		
+		String [] fields = {"delete", "insert"};
+		String [] values = {"insert","delete"};
+		deletion = carmanager.removeObject(fields, values);
+		insertion = carmanager.createObject(fields, values);
 		
 		TestAttraction =  new Attraction("Natural wonder","Grindavík", "Eðal bær, mjög fallegur.", "link");
 		String[] keywords = {"Hvalfjörður", "göngutúr"};
@@ -53,6 +61,14 @@ public class DatabaseInterfaceTest {
 		TestBooking = null;
 		CustomerObj = null;
 		TestCustomer = null;
+	}
+	@Test
+	public void testDeletion() {
+		assertEquals(deletion,1);
+	}
+	@Test
+	public void testInsertion() {
+		assertEquals(insertion,1);
 	}
 
 	@Test

@@ -40,7 +40,7 @@ public class MockData {
 		return 1;
 	}
 	public static int delete(Pair[] query) {
-		return 2;
+		return 1;
 	}
 	
 
