@@ -57,22 +57,22 @@ public class DatabaseInterfaceTest {
 
 	@Test
 	public void testAttractionQuery() {
-		assertSame(TestAttraction.getDescription(), AttractionObj.getDescription());
+		assertEquals(TestAttraction.getDescription(), AttractionObj.getDescription());
 	}
 	@Test
 	public void testTripQuery() {
-		assertSame(TestTrip.getDescription() , TripObj.getDescription());
+		assertEquals(TestTrip.getDescription() , TripObj.getDescription());
 	}
 	@Test
 	public void testCarQuery() {
-		assertSame(TestCar.getDescription(), CarObj.getDescription());
+		assertEquals(TestCar.getDescription(), CarObj.getDescription());
 	}
 	@Test
 	public void testBookingQuery() {
-		assertSame(TestBooking.getPrice(), BookingObj.getPrice());
+		assertEquals(TestBooking.getPrice(), BookingObj.getPrice());
 	}@Test
 	public void testCustomerQuery() {
-		assertSame(TestCustomer.getAge(), CustomerObj.getAge());
+		assertEquals(TestCustomer.getAge(), CustomerObj.getAge());
 	}
 
 }
