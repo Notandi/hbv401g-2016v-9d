@@ -14,8 +14,18 @@ public class DatabaseInterfaceTest {
 		Query AttractionQuery = new Query (1, "Attraction", null);
 		Query TripQuery = new Query(2,"Trip",null);
 		Query CarQuery = new Query(3,"Car",null);
-		Query Booking = new Query(4,"Booking",null);
-		Query Customer = new Query (5,"Customer", null);
+		Query BookingQuery = new Query(4,"Booking",null);
+		Query CustomerQuery = new Query (5,"Customer", null);
+		DataBlock AttractionRes = databaseInterface.select(AttractionQuery);
+		Attraction AttractionObj = AttractionRes.getAttractions().get(0);
+		DataBlock TripRes = databaseInterface.select(TripQuery);
+		Trip TripObj = TripRes.getTrips().get(0);
+		DataBlock CarRes = databaseInterface.select(CarQuery);
+		Car CarObj = CarRes.getCars().get(0);
+		DataBlock BookingRes = databaseInterface.select(BookingQuery);
+		Booking BookingObj = BookingRes.getBookings().get(0); 
+		DataBlock CustomerRes = databaseInterface.select(CustomerQuery);
+		Customer CustomerObj = CustomerRes.getCustomers().get(0);
 	}
 
 	@After
