@@ -18,6 +18,7 @@ public class Manager {
 		DataBlock res = this.databaseInterface.select(query);
 		return res;
 	};
+	
 	public void syncManagedObjects(DataBlock searchResults){
 		
 		
@@ -39,9 +40,7 @@ public class Manager {
 			this.managedObjects.getCustomers().addAll(searchResults.getCustomers());
 			break;
 			
-		}
-		
-		
+		}		
 	}
 	
 	public Pair[] constructPairs(String[] fields, String[] values)
