@@ -13,10 +13,10 @@ public class Trip {
 	private ArrayList<Integer> ratings;
 	private String picture;
 	private ArrayList<Attraction> attractions;
-	private String keywords;
+	private String[] keywords;
 	private double rating;
 	
-	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, String[] reviews, int[] ratings, String picture, Attraction[] attractions, String keywords) {
+	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, String[] reviews, int[] ratings, String picture, Attraction[] attractions, String[] keywords) {
 		this.init();
 		this.setPopularity(popularity);
 		this.setLocation(location);
@@ -95,10 +95,10 @@ public class Trip {
 			this.attractions.add(attractions[i]);
 		}
 	}
-	public String getKeywords() {
+	public String[] getKeywords() {
 		return keywords;
 	}
-	public void setKeywords(String keywords) {
+	public void setKeywords(String[] keywords) {
 		this.keywords = keywords;
 	}
 	public ArrayList<Integer> getRatings() {

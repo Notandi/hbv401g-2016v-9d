@@ -5,31 +5,33 @@ import java.util.ArrayList;
 public class MockData {
 	
 	public static ArrayList<Car> MockCar(Query query){
-		Car mockcar = new Car(null, null, null, 0, null, false);
+		String[] keywords = {"jeppi", "97"};
+		Car mockcar = new Car("Ford 356", "97 model, jeppi, kemst hvert sem er.", "link", 30000, keywords, true);
 		ArrayList<Car> carArray = new ArrayList<Car>();
 		carArray.add(mockcar);
 		return carArray;
 	}
 	public static ArrayList<Attraction> MockAttraction(Query query){
-		Attraction mockattraction = new Attraction("epli","banani", "geitungur", "gull");
+		Attraction mockattraction = new Attraction("Natural wonder","Grindavík", "Eðal bær, mjög fallegur.", "link");
 		ArrayList<Attraction> attractionArray = new ArrayList<Attraction>();
 		attractionArray.add(mockattraction);
 		return attractionArray;
 	}
 	public static ArrayList<Booking> MockBooking(Query query){
-		Booking mockbooking = new Booking(null, null, null, 0, 0);
+		Booking mockbooking = new Booking("Jonathan Blake jr.", null, null, 14000, 6);
 		ArrayList<Booking> bookingArray = new ArrayList<Booking>();
 		bookingArray.add(mockbooking);
 		return bookingArray;
 	}
 	public  static ArrayList<Trip> MockTrip (Query query ){
-		Trip mocktrip = new Trip(0, null, 0, null, 0, null, null, null, null, null, null);
+		String[] keywords = {"Hvalfjörður", "göngutúr"};
+		Trip mocktrip = new Trip(0, "Hvalfjörður", 2, "Göngutúr um fallegt landsvæði.", 1500, "Bus", null, null, "link", null, keywords);
 		ArrayList<Trip> tripArray = new ArrayList<Trip>();
 		tripArray.add(mocktrip);
 		return tripArray; 
 	}
 	public  static ArrayList<Customer> MockCustomer (Query query){
-		Customer mockcustomer = new Customer(null, 0, null, null, null);
+		Customer mockcustomer = new Customer("Ósk Ólafsdóttir", 15, "Female", "Indian", "iamindian@india.in");
 		ArrayList<Customer> customerArray = new ArrayList<Customer>();
 		customerArray.add(mockcustomer);
 		return customerArray;
