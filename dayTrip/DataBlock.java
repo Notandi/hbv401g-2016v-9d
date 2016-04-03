@@ -13,11 +13,11 @@ public class DataBlock {
 	
 	public DataBlock(int type) {
 		
-		this.setAttractions(new ArrayList<Attraction>());
-		this.setBookings(new ArrayList<Booking>());
-		this.setCars(new ArrayList<Car>());
-		this.setCustomers(new ArrayList<Customer>());
-		this.setTrips(new ArrayList<Trip>());
+		this.setAttractions(null);
+		this.setBookings(null);
+		this.setCars(null);
+		this.setCustomers(null);
+		this.setTrips(null);
 		this.setType(type);
 	}
 
