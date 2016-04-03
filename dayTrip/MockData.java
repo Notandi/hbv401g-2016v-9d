@@ -36,5 +36,12 @@ public class MockData {
 		customerArray.add(mockcustomer);
 		return customerArray;
 	}
+	public static int insert(Pair[] query) {
+		return 1;
+	}
+	public static int delete(Pair[] query) {
+		return 2;
+	}
+	
 
 }

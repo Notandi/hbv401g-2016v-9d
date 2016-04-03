@@ -31,12 +31,12 @@ public class DatabaseInterface {
 	
 	public int insert(Pair[] query)
 	{		
-		return -1;
+		return MockData.insert(query);
 	}
 	
 	public int delete(Pair[] query)
 	{
-		return -1;
+		return MockData.delete(query);
 	}
 
 }
