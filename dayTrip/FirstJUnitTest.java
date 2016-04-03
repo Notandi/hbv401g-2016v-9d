@@ -10,12 +10,11 @@ public class FirstJUnitTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
 		DatabaseInterface databaseInterface = new DatabaseInterface();
-		Query query = new Query(1, null, null);
+		Query query = new Query(1, "what", null);
 		ArrayList<?> testDeida = databaseInterface.select(query);
-		assertEquals(testDeida, null);
-		
+		System.out.println(testDeida.get(0));
+		assertEquals(testDeida.get(0).getClass(), MockData.MockAttraction(query).get(0).getClass());
 	}
 
 }

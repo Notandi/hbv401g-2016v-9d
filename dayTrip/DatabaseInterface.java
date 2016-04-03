@@ -4,22 +4,29 @@ import java.util.ArrayList;
 
 public class DatabaseInterface {
 	
-	public ArrayList<?> select(Query query)
+	public DataBlock select(Query query)
 	{
 		int manager = query.getType();
+		DataBlock res = new DataBlock();
+		
 		switch(manager){
 		case 1:	ArrayList<Attraction> mockresultAttraction =  MockData.MockAttraction(query);
-				return mockresultAttraction;
+				res.setAttractions(mockresultAttraction);
+				break;
 		case 2: ArrayList<Trip> mockresultTrip = MockData.MockTrip(query);
-				return mockresultTrip;
+				res.setTrips(mockresultTrip);
+				break;
 		case 3: ArrayList<Car> mockresultCar = MockData.MockCar(query);
-				return mockresultCar;
+				res.setCars(mockresultCar);
+				break;
 		case 4:	ArrayList<Booking> mockresultBooking = MockData.MockBooking(query);
-				return mockresultBooking;
+				res.setBookings(mockresultBooking);
+				break;
 		case 5: ArrayList<Customer> mockresultCustomer = MockData.MockCustomer(query);
-				return mockresultCustomer;
+				res.setCustomers(mockresultCustomer);
+				break;
 		}
-		return null;
+		return res;
 	}
 	
 	public int insert(Pair[] query)
