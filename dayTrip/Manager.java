@@ -74,8 +74,7 @@ public class Manager {
 	}
 	
 	public int createObject(String[] fields, String[] values)
-	{		
-		
+	{				
 		if(this.databaseInterface.insert(constructPairs(fields,values)) == 1) return 1;		
 		return -1;
 				
