@@ -6,25 +6,23 @@ public class Trip {
 	private int  popularity;
 	private String location;
 	private int difficulty;
+	
 	private String description;
 	private int price;
 	private String transportation;
-	private ArrayList<String> reviews;
-	private ArrayList<Integer> ratings;
 	private String picture; 
 	private ArrayList<Attraction> attractions;
 	private String[] keywords;
 	private double rating;
 	
-	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, String[] reviews, int[] ratings, String picture, Attraction[] attractions, String[] keywords) {
+	public Trip (int  popularity, String location, int difficulty, String description, int price, String transportation, String picture, Attraction[] attractions, String[] keywords) {
 		this.init();
 		this.setPopularity(popularity);
 		this.setLocation(location);
 		this.setDifficulty(difficulty);
 		this.setDescription(description);
 		this.setPrice(price);
-		this.setTransportation(transportation);
-		this.setReviews(reviews);
+		this.setTransportation(transportation);		
 		this.setPicture(picture);
 		this.setAttraction(attractions);
 		this.setKeywords(keywords);
@@ -32,13 +30,11 @@ public class Trip {
 	
 	public void init()
 	{
-		reviews = new ArrayList<String>();
-		ratings = new ArrayList<Integer>();
+		
 		attractions = new ArrayList<Attraction>();		
 	}
 	
-	public void addReview(String review){this.reviews.add(review);}	
-	public void addrating(int rating){this.ratings.add(rating);}
+	
 	public void addAttratction(Attraction attraction){this.attractions.add(attraction);}
 	
 	public void changePopularity(int difference){
@@ -63,16 +59,7 @@ public class Trip {
 	public void setTransportation(String transportation) {
 		this.transportation = transportation;
 	}
-	public ArrayList<String> getReviews() {
-		return reviews;
-	}
-	public void setReviews(String[] reviews) {
-		if(reviews == null) return;
-		for(int i = 0; i<reviews.length; i++)
-		{
-			this.reviews.add(reviews[i]);
-		}
-	}
+
 	public int getPopularity() {
 		return popularity;
 	}
@@ -101,16 +88,7 @@ public class Trip {
 	public void setKeywords(String[] keywords) {
 		this.keywords = keywords;
 	}
-	public ArrayList<Integer> getRatings() {
-		return ratings;
-	}
-	public void setRatings(int[] ratings) {
-		if(ratings == null) return;
-		for(int i = 0; i<ratings.length; i++)
-		{
-			this.ratings.add(ratings[i]);
-		}
-	}
+
 	public int getDifficulty() {
 		return difficulty;
 	}
