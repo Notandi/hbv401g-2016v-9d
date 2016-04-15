@@ -53,10 +53,11 @@ public class DatabaseInterface {
 	public void updateSlots(Trip trip, int numOfPeople) {
 		
 		Statement stmt = null;
-		trip.numOfPeople -= numOfPeople;
+		int currentSlots = trip.getSlots();
+		trip.setSlots(currentSlots - numOfPeople);
 		
 		stmt = c.createStatement();
-	    String sql = "UPDATE Trips set SLOTS = " + trip.numOfPeople + " where ID=" + trip.id;
+	    String sql = "UPDATE Trips set SLOTS = " + trip.getSlots() + " where ID=" + trip.getId();
 	    stmt.executeUpdate(sql);
 	    c.commit();
 	    stmt.close();
