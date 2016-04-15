@@ -83,7 +83,7 @@ public class DatabaseInterface {
 			                   " ATTRACTION_ID INT 		 NOT NULL)"; 
 			      stmt.executeUpdate(sql);
 			      stmt.close();
-			      c.close();
+			      //c.close();
 			      
 			    } catch ( Exception e ) {
 			      throw e;
