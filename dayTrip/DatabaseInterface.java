@@ -16,15 +16,6 @@ public class DatabaseInterface {
 		case 2: ArrayList<Trip> mockresultTrip = MockData.MockTrip(query);
 				res.setTrips(mockresultTrip);
 				break;
-		case 3: ArrayList<Car> mockresultCar = MockData.MockCar(query);
-				res.setCars(mockresultCar);
-				break;
-		case 4:	ArrayList<Booking> mockresultBooking = MockData.MockBooking(query);
-				res.setBookings(mockresultBooking);
-				break;
-		case 5: ArrayList<Customer> mockresultCustomer = MockData.MockCustomer(query);
-				res.setCustomers(mockresultCustomer);
-				break;
 		}
 		return res;
 	}

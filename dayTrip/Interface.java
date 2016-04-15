@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 public class Interface {
 	private static AttractionManager attractionManager;
-	private static BookingManager bookingManager;
-	private static CarManager carManager;
-	private static CustomerManager customerManager;
 	private static TripManager tripManager;
 	private static DatabaseInterface databaseInterface;
 	
@@ -14,9 +11,6 @@ public class Interface {
 	{
 		this.setDatabaseInterface(new DatabaseInterface());
 		this.setAttractionManager(new AttractionManager(databaseInterface, 1));
-		this.setBookingManager(new BookingManager(databaseInterface, 4));
-		this.setCarManager(new CarManager(databaseInterface, 3));
-		this.setCustomerManager(new CustomerManager(databaseInterface, 5));
 		this.setTripManager(new TripManager(databaseInterface, 2));
 	}
 
@@ -28,29 +22,7 @@ public class Interface {
 		this.attractionManager = attractionManager;
 	}
 
-	public BookingManager getBookingManager() {
-		return bookingManager;
-	}
-
-	public void setBookingManager(BookingManager bookingManager) {
-		this.bookingManager = bookingManager;
-	}
-
-	public CarManager getCarManager() {
-		return carManager;
-	}
-
-	public void setCarManager(CarManager carManager) {
-		this.carManager = carManager;
-	}
-
-	public CustomerManager getCustomerManager() {
-		return customerManager;
-	}
-
-	public void setCustomerManager(CustomerManager customerManager) {
-		this.customerManager = customerManager;
-	}
+	
 
 	public TripManager getTripManager() {
 		return tripManager;
@@ -87,16 +59,7 @@ public class Interface {
 				break;
 			case 2:
 				res = tripManager.search(query);
-				break;
-			case 3:
-				res = carManager.search(query);
-				break;
-			case 4:
-				res = bookingManager.search(query);
-				break;
-			case 5:
-				res = customerManager.search(query);
-				break;			
+				break;	
 			default:
 				res = null;
 			}

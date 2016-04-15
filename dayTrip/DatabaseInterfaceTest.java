@@ -10,12 +10,11 @@ import org.junit.Test;
 
 public class DatabaseInterfaceTest {
 	private DatabaseInterface databaseInterface;
-	private CarManager carmanager;
+	private TripManager carmanager;
 
 	@Before
 	public void setUp() throws Exception {
 		databaseInterface = new DatabaseInterface();
-		carmanager = new CarManager(databaseInterface,3);
 	}
 
 	@After
@@ -30,14 +29,8 @@ public class DatabaseInterfaceTest {
 		DataBlock FailedRes = databaseInterface.select(FailedQuery);
 		ArrayList<Attraction> FailedAttraction = FailedRes.getAttractions();
 		ArrayList<Trip> FailedTrip = FailedRes.getTrips(); 
-		ArrayList<Car> FailedCar = FailedRes.getCars();
-		ArrayList<Booking> FailedBooking = FailedRes.getBookings();
-		ArrayList<Customer> FailedCustomer = FailedRes.getCustomers();
 		assertNull(FailedAttraction);
 		assertNull(FailedTrip);
-		assertNull(FailedCar);
-		assertNull(FailedBooking);
-		assertNull(FailedCustomer);
 	}
 	
 	@Test
@@ -89,34 +82,6 @@ public class DatabaseInterfaceTest {
 		DataBlock TripRes = databaseInterface.select(TripQuery);
 		Trip TripObj = TripRes.getTrips().get(0);
 		assertEquals(TestTrip.getDescription() , TripObj.getDescription());
-	}
-	
-	@Test
-	public void testCarQuery() {
-		String[] keywords2 = {"jeppi", "97"};
-		Car TestCar = new Car("Ford 356", "97 model, jeppi, kemst hvert sem er.", "link", 30000, keywords2, true);
-		Query CarQuery = new Query(3,"Car",null);
-		DataBlock CarRes = databaseInterface.select(CarQuery);
-		Car CarObj = CarRes.getCars().get(0);
-		assertEquals(TestCar.getDescription(), CarObj.getDescription());
-	}
-	
-	@Test
-	public void testBookingQuery() {
-		Booking TestBooking = new Booking("Jonathan Blake jr.", null, null, 14000, 6);
-		Query BookingQuery = new Query(4,"Booking",null);
-		DataBlock BookingRes = databaseInterface.select(BookingQuery);
-		Booking BookingObj = BookingRes.getBookings().get(0); 
-		assertEquals(TestBooking.getPrice(), BookingObj.getPrice());
-	}
-	
-	@Test
-	public void testCustomerQuery() {
-		Customer TestCustomer = new Customer("Gunnþórunn Kona Rafnsdóttir", 15, "Female", "Indian", "iamindian@india.in");
-		Query CustomerQuery = new Query (5,"Customer", null);
-		DataBlock CustomerRes = databaseInterface.select(CustomerQuery);
-		Customer CustomerObj = CustomerRes.getCustomers().get(0);
-		assertEquals(TestCustomer.getAge(), CustomerObj.getAge());
 	}
 
 }

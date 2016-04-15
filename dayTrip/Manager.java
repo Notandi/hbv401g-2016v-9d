@@ -30,16 +30,6 @@ public class Manager {
 		case 2: 
 			this.managedObjects.getTrips().addAll(searchResults.getTrips());
 			break;
-		case 3: 
-			this.managedObjects.getCars().addAll(searchResults.getCars());
-			break;
-		case 4:	
-			this.managedObjects.getBookings().addAll(searchResults.getBookings());
-			break;
-		case 5: 
-			this.managedObjects.getCustomers().addAll(searchResults.getCustomers());
-			break;
-			
 		}		
 	}
 	
