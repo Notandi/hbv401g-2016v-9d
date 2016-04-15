@@ -13,7 +13,7 @@ public class DatabaseConnectionTester {
 		Statement stmt = null;
 		    try {
 		      Class.forName("org.sqlite.JDBC");
-		      c = DriverManager.getConnection("jdbc:sqlite:test.db");
+		      c = DriverManager.getConnection("jdbc:sqlite:trips.db");
 		      c.setAutoCommit(false);
 		    } catch ( Exception e ) {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -26,7 +26,7 @@ public class DatabaseConnectionTester {
 	   /*
 	   try {
 		   	  stmt = c.createStatement();
-		      String sql = "CREATE TABLE COMPANY " +
+		      String sql = "CREATE TABLE Trips " +
 		                   "(ID INT PRIMARY KEY     NOT NULL," +
 		                   " NAME           TEXT    NOT NULL, " + 
 		                   " AGE            INT     NOT NULL, " + 

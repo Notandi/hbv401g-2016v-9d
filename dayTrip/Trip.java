@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 public class Trip {
 	private String location;
+	private int id;
 	private int difficulty;
 	private String description;
 	private int price;
 	private String transportation;
 	private String attractions;
-	private String[] keywords;
+	private int slots;
 
 	public Trip(String location, int difficulty, String description, int price, String transportation, String attractions, String[] keywords) {
 		this.init();
