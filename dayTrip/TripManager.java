@@ -10,7 +10,7 @@ public class TripManager{
 	public TripManager(DatabaseInterface databaseInterface)
 	{
 		this.databaseInterface = databaseInterface;
-		this.Trips = new ArrayList<Trip>();
+		this.Trips = new ArrayList<Trip>();		
 	}
 
 	public ArrayList<Trip> search(String location, Date date, int numberofpeople, String type){
