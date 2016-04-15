@@ -109,9 +109,9 @@ public class DatabaseInterface {
 	
 	public ArrayList<Trip> select(Query query)
 	{		
+		ArrayList<Trip> resultTrips = new ArrayList<Trip>();
 		Statement stmt = null;
 		ResultSet rs = null;
-		int id = 0;
 		String type = query.getType();
 		String location = query.getLocation();
 		String date = dateToString(query.getDate());
@@ -121,20 +121,35 @@ public class DatabaseInterface {
 		
 	    try {
 	    	stmt = c.createStatement();
-		    String sql = "SELECT * FROM Trip"
+		    String sql = "SELECT * FROM Trip WHERE TYPE = "+type+" AND LOCATION = "+location+" "
+		    		+ "AND DATE = "+date+"AND SLOTS > "+numOfPeople+";";
 		    rs = stmt.executeQuery(sql);
-		    id = rs.getInt("ID");
+		    while ( rs.next() ) {
+		         int trip_id = rs.getInt("ID");
+		         Date trip_date = stringToDate(rs.getString("DATE"));
+		         String trip_title = rs.getString("TITLE");
+		         String trip_departureTime = rs.getString("DEPARTURE_TIME");
+		         String trip_location = rs.getString("LOCATION");
+		         String trip_description = rs.getString("DESCRIPTION");
+		         int trip_price = rs.getInt("PRICE");
+		         String trip_transportation = rs.getString("TRANSPORTATION");
+		         int trip_slots = rs.getInt("SLOTS");
+		         ArrayList<Attraction> trip_attractions = findAttractionsInTrip(trip_id);	         
+		         Trip trip = new Trip(trip_title,trip_departureTime,trip_location,trip_id,
+		        		              trip_description,trip_price,trip_transportation,trip_attractions,trip_slots,trip_date);
+		         this.tripManager.addTrip(trip);
+		         resultTrips.add(trip);	         
+		      }
+		    
 		    c.commit();
 		    stmt.close();
 	    } catch ( Exception e ) {
 	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	    	System.exit(0);
-	    }
-		
-		
+	    }	
 	   
 	    
-		return trap;
+		return resultTrips;
 	}
 	
 	public String dateToString(Date date)
@@ -158,13 +173,17 @@ public class DatabaseInterface {
 	public ArrayList<Attraction> findAttractionsInTrip(int trip_id)
 	{
 		
-	    
-	    ArrayList<Integer> attractionIDs = selectAttractionIDs(id);//Sækja öll IDs á attractions sem eru í þessu Trip
+		//Sækja öll IDs á attractions sem eru í þessu Trip
+	    ArrayList<Integer> attractionIDs = selectAttractionIDs(trip_id);
+	    //Athuga hvaða attractions eru núþegar til í attractionManager
 	    Pair existingAttractions = attractionManager.locateExistingAttractions(attractionIDs);
 	    attractionIDs = existingAttractions.getIds();
+	    //Næ í öll attractions sem vantar upp á úr database, sem voru ekki til í attractionManager
 	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
 	    ArrayList<Attraction> managerAttractions = existingAttractions.getAttractions();
+	    //Splæsi saman manager attractionunum og databaseAttractionunum
 	    managerAttractions.addAll(databaseAttractions);
+	    return managerAttractions;
 	}
 	
 	
@@ -342,7 +361,7 @@ public class DatabaseInterface {
 		      }
 		      rs.close();
 		      stmt.close();
-		      c.close();
+		      //c.close();
 		    } catch ( Exception e ) {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		      System.exit(0);

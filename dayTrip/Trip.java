@@ -14,9 +14,10 @@ public class Trip {
 	private ArrayList<Attraction> attractions;
 	private int slots;
 
-	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, ArrayList<Attraction> attractions, String[] keywords, int slots, Date date) {
+	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, ArrayList<Attraction> attractions, int slots, Date date) 
+	{
 		this.init();
-		this.date = date;
+		this.setDate(date);
 		this.setTitle(title);
 		this.setDepartureTime(departureTime);
 		this.setLocation(location);
@@ -116,5 +117,13 @@ public class Trip {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

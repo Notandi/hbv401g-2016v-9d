@@ -16,6 +16,12 @@ public class TripManager{
 	public ArrayList<Trip> search(Query query){
 		return new ArrayList<Trip>();
 	}
+	
+	public void addTrip(Trip trip)
+	{
+		Trips.add(trip);
+	}
+	
 	public void createTrip(){
 		
 	}
