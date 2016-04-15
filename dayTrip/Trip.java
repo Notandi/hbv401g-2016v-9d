@@ -6,19 +6,17 @@ public class Trip {
 	private String title;
 	private String location;
 	private int id;
-	private int difficulty;
 	private String description;
 	private int price;
 	private String transportation;
 	private String attractions;
 	private int slots;
 
-	public Trip(String title, String location, int id, int difficulty, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
+	public Trip(String title, String location, int id, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
 		this.init();
 		this.setTitle(title);
 		this.setLocation(location);
 		this.setId(id);
-		this.setDifficulty(difficulty);
 		this.setDescription(description);
 		this.setPrice(price);
 		this.setTransportation(transportation);
@@ -85,16 +83,7 @@ public class Trip {
 			this.attractions.add(attractions[i]);
 		}
 	}
-*/
-
-	public int getDifficulty() {
-		return difficulty;
-	}
-
-	public void setDifficulty(int difficulty) {
-		this.difficulty = difficulty;
-	}
-	
+*/	
 	public int getId() {
 		return id;
 	}
