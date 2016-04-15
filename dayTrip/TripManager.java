@@ -13,7 +13,7 @@ public class TripManager{
 		this.Trips = new ArrayList<Trip>();		
 	}
 
-	public ArrayList<Trip> search(String location, Date date, int numberofpeople, String type){
+	public ArrayList<Trip> search(Query query){
 		return new ArrayList<Trip>();
 	}
 	public void createTrip(){

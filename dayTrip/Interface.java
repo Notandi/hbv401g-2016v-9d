@@ -40,7 +40,8 @@ public class Interface {
 	}
 	
 	public ArrayList<Trip> search(String location, Date date, int numberofpeople, String type){
-		return tripManager.search(location, date , numberofpeople, type);
+		Query query = new Query(location,date,numberofpeople,type);
+		return tripManager.search(query);
 	}
 	public void createTrip(){
 		tripManager.createTrip();

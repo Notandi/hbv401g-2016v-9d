@@ -16,12 +16,12 @@ public class DatabaseInterface {
 		this.init();
 	}
 	
-	public DataBlock select(Query query)
+	public ArrayList<Trip> select(Query query)
 	{		
 		
 		
-		DataBlock datablock = new DataBlock(2);
-		return datablock;
+		ArrayList<Trip> trap = new ArrayList<Trip>();
+		return trap;
 	}
 	
 	private void init() {
@@ -124,13 +124,29 @@ public class DatabaseInterface {
 	{
 		return 1;
 	}
-	public Attraction selectAttraction(int id){
-		Attraction atr = null;
+	public ArrayList<Attraction> selectAttractions(ArrayList<Integer> ids){
+		ArrayList<Attraction> attractions = new ArrayList<Attraction>();
 		Statement stmt = null;
+		if(ids.size() == 0) return null;
+		
 		try{
+			
 			stmt = c.createStatement();
-		    ResultSet rs = stmt.executeQuery( "SELECT * FROM Attractions WHERE ID = " + id + ";" );
-		    atr = new Attraction(rs.getInt("ID"),rs.getString("TYPE"),rs.getString("LOCATION"),rs.getString("DESCRIPTION"),rs.getString("NAME"));
+			String selectAttractions = "SELECT * FROM Attractions WHERE ID = " + ids.get(0);
+		    for(int i = 1; i<ids.size(); i++)
+		    {
+		    	selectAttractions += "AND ID = " + ids.get(i);		    	
+		    }
+		    
+		    selectAttractions += ";";
+			
+			ResultSet rs = stmt.executeQuery(selectAttractions);
+		    
+			 while ( rs.next() ) {		         		         
+		         Attraction attraction = new Attraction(rs.getInt("ID"),rs.getString("TYPE"),rs.getString("LOCATION"),rs.getString("DESCRIPTION"),rs.getString("NAME"));
+		         attractions.add(attraction);		         
+		      }
+					    
 		    rs.close();
 		    stmt.close();
 			
@@ -138,7 +154,7 @@ public class DatabaseInterface {
 	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	    	System.exit(0);
 	    }
-	    return atr;
+	    return attractions;
 	}
 	
 	public void updateSlots(Trip trip, int numOfPeople) {

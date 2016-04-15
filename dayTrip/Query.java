@@ -4,57 +4,58 @@ import java.util.ArrayList;
 
 public class Query {
 	
-	private ArrayList<String> keyWords;
-	private ArrayList<String> filters;
-	private int type;
-	private String[] ignoreWords = {"or", "and"};
+	private String type;
+	private String location;
+	private Date date;
+	private int numOfPeople;
 	
-	public Query(int type, String searchString, ArrayList<String> filters) {
-		
-		this.keyWords = new ArrayList<String>();
-		this.filters = new ArrayList<String>();
-		
-		this.setType(type);
-		this.filters = filters;		
-		this.keyWords = this.generateKeyWords(searchString);
-	}
 	
-	public ArrayList<String> generateKeyWords(String searchString) {
-		
-		ArrayList<String> words = new ArrayList<String>();
-		int firstLetter = 0;
-		
-		for(int i = 0; i < searchString.length(); i++) {
-			
-			if(searchString.charAt(i) == '\0') {
-				
-				String word = searchString.substring(firstLetter, i);
-				
-				if(!isIgnoreWord(word))
-					words.add(word);		
-				
-				firstLetter = i;
-			}
-		}
-		
-		return words;
-	}
-	
-	public boolean isIgnoreWord(String word) {
-		
-		for(int i = 0; i < ignoreWords.length; i++) {
-			
-			if(word.equals(ignoreWords[i])) return true;
-		}
-		
-		return false;
+	public Query(String location, Date date, int numOfPeople, String type) {
+		setType(type);
+		setLocation(location);
+		setDate(date);	
+		setNumOfPeople(numOfPeople);
 	}
 
-	public int getType() {
+
+	public String getType() {
 		return type;
 	}
 
-	public void setType(int type) {
+
+	public void setType(String type) {
 		this.type = type;
 	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+	public Date getDate() {
+		return date;
+	}
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+	public int getNumOfPeople() {
+		return numOfPeople;
+	}
+
+
+	public void setNumOfPeople(int numOfPeople) {
+		this.numOfPeople = numOfPeople;
+	}
+	
+	
 }
