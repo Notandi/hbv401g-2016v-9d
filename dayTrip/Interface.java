@@ -38,8 +38,20 @@ public class Interface {
 		this.databaseInterface = databaseInterface;
 	}
 	
-	public ArrayList<Trip> search(String location, Date date, int numberofpeople, Stirng type){
+	public ArrayList<Trip> search(String location, Date date, int numberofpeople, String type){
 		tripManager.search(location, date , numberofpeople, type);
+	}
+	public void createTrip(){
+		tripManager.createTrip();
+	}
+	public void removeTrip(){
+		tripManager.removeTrip();
+	}
+	public void createAttraction(){
+		attractionManager.createAttraction();
+	}
+	public void removeAttraction(){
+		attractionManager.removeAttraction();
 	}
 	
 	/*
