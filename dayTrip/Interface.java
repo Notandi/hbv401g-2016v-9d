@@ -9,9 +9,10 @@ public class Interface {
 	
 	public Interface()
 	{
-		this.setDatabaseInterface(new DatabaseInterface());
 		this.setAttractionManager(new AttractionManager(databaseInterface));
 		this.setTripManager(new TripManager(databaseInterface));
+		this.setDatabaseInterface(new DatabaseInterface(attractionManager,tripManager));
+
 	}
 
 	public AttractionManager getAttractionManager() {

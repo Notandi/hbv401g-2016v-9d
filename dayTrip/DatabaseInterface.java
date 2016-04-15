@@ -6,9 +6,13 @@ import java.sql.*;
 public class DatabaseInterface {
 	
 	private Connection c;
+	private AttractionManager attractionManager;
+	private TripManager tripManager;
 	
-	public DatabaseInterface()
+	public DatabaseInterface(AttractionManager am, TripManager tm)
 	{
+		attractionManager = am;
+		tripManager = tm;
 		this.init();
 	}
 	
