@@ -19,9 +19,51 @@ public class DatabaseInterface {
 	public ArrayList<Trip> select(Query query)
 	{		
 		
+		Statement stmt = null;
+		ResultSet rs = null;
+		int id = 0;
 		
+	    try {
+	    	stmt = c.createStatement();
+		    String sql = "SELECT ATTRACTION_ID FROM AttractionsInTrips WHERE TRIP_ID =";
+		    rs = stmt.executeQuery(sql);
+		    id = rs.getInt("ID");
+		    c.commit();
+		    stmt.close();
+	    } catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+	    
+	    ArrayList<Integer> attractionIDs = selectAttractionIDs(id);
+	    attractionManager.locateExistingAttractions(attractionIDs);
+	    
 		ArrayList<Trip> trap = new ArrayList<Trip>();
 		return trap;
+	}
+	
+	// Selectar attraction id's þegar Trip er constructað.
+	public ArrayList<Integer> selectAttractionIDs(int id) {		
+		
+		Statement stmt = null;
+		ArrayList<Integer> ids = null;
+		
+	    try {
+	    	ids = new ArrayList<Integer>();
+	    	stmt = c.createStatement();
+		    String sql = "SELECT ATTRACTION_ID FROM AttractionsInTrips WHERE TRIP_ID =" + id;
+		    ResultSet rs = stmt.executeQuery(sql);
+		    while( rs.next() ) {
+		    	ids.add(rs.getInt("ATTRACTION_ID"));
+		    }
+		    c.commit();
+		    stmt.close();
+	    } catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+	    System.out.println("Returned ID's succesfully!");
+	    return ids;	    
 	}
 	
 	private void init() {

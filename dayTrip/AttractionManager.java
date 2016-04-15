@@ -12,7 +12,7 @@ public class AttractionManager {
 		this.Attractions = new ArrayList<Attraction>();
 	}
 	
-	public ArrayList<Integer> locateExistingAttractions(int id) {
+	public Pair locateExistingAttractions(ArrayList<Integer> ids) {
 		
 		
 	}
