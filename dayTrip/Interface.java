@@ -39,7 +39,7 @@ public class Interface {
 	}
 	
 	public ArrayList<Trip> search(String location, Date date, int numberofpeople, String type){
-		tripManager.search(location, date , numberofpeople, type);
+		return tripManager.search(location, date , numberofpeople, type);
 	}
 	public void createTrip(){
 		tripManager.createTrip();
