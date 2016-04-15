@@ -11,11 +11,10 @@ public class Trip {
 	private String description;
 	private int price;
 	private String transportation;
-	private String attractions;
-	private ArrayList<Integer> attractionIDs;
+	private ArrayList<Attraction> attractions;
 	private int slots;
 
-	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, String attractions, String[] keywords, int slots, Date date) {
+	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, ArrayList<Attraction> attractions, String[] keywords, int slots, Date date) {
 		this.init();
 		this.date = date;
 		this.setTitle(title);
@@ -32,7 +31,7 @@ public class Trip {
 	public void init() {
 
 		//attractions = new ArrayList<Attraction>();
-		
+		//attractionIDs = 
 	}
 /*
 	public void addAttratction(Attraction attraction) {
@@ -76,11 +75,11 @@ public class Trip {
 		this.transportation = transportation;
 	}
 	
-	public String getAttraction() {
+	public ArrayList<Attraction> getAttraction() {
 		return attractions;
 	}
 
-	public void setAttraction(String attractions) {
+	public void setAttraction(ArrayList<Attraction> attractions) {
 		this.attractions = attractions;
 	}
 /*

@@ -1,14 +1,16 @@
 package dayTrip;
 
+import java.util.ArrayList;
+
 public class Pair {
 	
-	private String type;
-	private String value;
+	private ArrayList<Integer> ids;
+	private ArrayList<Attraction> attractions;
 	
-	public Pair(String type, String value) {
+	public Pair(ArrayList<Integer> ids, ArrayList<Attraction> attractions) {
 		
-		this.type = type;
-		this.value = value;
+		this.ids = ids;
+		this.attractions = attractions;
 	}
 	
 }

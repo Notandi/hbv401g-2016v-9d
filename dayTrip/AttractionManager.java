@@ -12,7 +12,12 @@ public class AttractionManager {
 		this.Attractions = new ArrayList<Attraction>();
 	}
 	
-	public Attraction findAttractionById(int id){
+	public ArrayList<Integer> locateExistingAttractions(int id) {
+		
+		
+	}
+	
+	/*public Attraction findAttractionById(int id){
 		for (int i = 0; i < Attractions.size(); i++){
 			Attraction atr = Attractions.get(i);
 			if (atr.getId() == id){
@@ -22,7 +27,7 @@ public class AttractionManager {
 		Attractions.add(databaseInterface.selectAttraction(id));
 		return Attractions.get(Attractions.size());
 		
-	}
+	}*/
 	public void createAttraction(){
 		
 	}
