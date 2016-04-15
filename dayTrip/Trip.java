@@ -11,7 +11,7 @@ public class Trip {
 	private String transportation;
 	private ArrayList<String> reviews;
 	private ArrayList<Integer> ratings;
-	private String picture;
+	private String picture; 
 	private ArrayList<Attraction> attractions;
 	private String[] keywords;
 	private double rating;

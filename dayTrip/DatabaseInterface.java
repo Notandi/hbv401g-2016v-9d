@@ -1,6 +1,7 @@
 package dayTrip;
 
 import java.util.ArrayList;
+import java.sql.*;
 
 public class DatabaseInterface {
 	
@@ -22,6 +23,7 @@ public class DatabaseInterface {
 	
 	public int insert(Pair[] query)
 	{		
+		//if()
 		return MockData.insert(query);
 	}
 	

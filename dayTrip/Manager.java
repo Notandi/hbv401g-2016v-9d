@@ -35,6 +35,7 @@ public class Manager {
 	
 	public Pair[] constructPairs(String[] fields, String[] values)
 	{
+		
 		Pair[] query = new Pair[fields.length];
 		switch (this.type){
 			case 1:
@@ -63,7 +64,7 @@ public class Manager {
 	}
 	
 	public int createObject(String[] fields, String[] values)
-	{				
+	{		
 		if(this.databaseInterface.insert(constructPairs(fields,values)) == 1) return 1;		
 		return -1;
 				
