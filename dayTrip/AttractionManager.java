@@ -16,6 +16,17 @@ public class AttractionManager {
 		ArrayList<Attraction> x = new ArrayList<Attraction>();
 		return x;
 	}
+	
+	public Attraction findAttractionById(int id){
+		for (int i = 0; i < Attractions.size(); i++){
+			Attraction atr = Attractions.get(i);
+			if (atr.getId() == id){
+				return atr;
+			}
+		}
+		return null;
+		
+	}
 	public void createAttraction(){
 		
 	}
