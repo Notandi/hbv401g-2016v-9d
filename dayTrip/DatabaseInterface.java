@@ -56,12 +56,18 @@ public class DatabaseInterface {
 		int currentSlots = trip.getSlots();
 		trip.setSlots(currentSlots - numOfPeople);
 		
-		stmt = c.createStatement();
-	    String sql = "UPDATE Trips set SLOTS = " + trip.getSlots() + " where ID=" + trip.getId();
-	    stmt.executeUpdate(sql);
-	    c.commit();
-	    stmt.close();
-	    c.close();
+	    try {
+	    	stmt = c.createStatement();
+		    String sql = "UPDATE Trips set SLOTS = " + trip.getSlots() + " where ID=" + trip.getId();
+		    stmt.executeUpdate(sql);
+		    c.commit();
+		    stmt.close();
+		    c.close();
+	    } catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+	    System.out.println("Opened database successfully");
 	}
 
 }
