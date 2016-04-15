@@ -1,9 +1,14 @@
 package dayTrip;
 
-public class AttractionManager extends Manager {
+import java.util.ArrayList;
+
+public class AttractionManager {
 	
-	public AttractionManager(DatabaseInterface databaseInterface, int type)
+	private ArrayList<Attraction> Attractions;
+	private DatabaseInterface databaseInterface; 
+	public AttractionManager(DatabaseInterface databaseInterface)
 	{
-		super(databaseInterface, type);
+		this.databaseInterface = databaseInterface;
+		this.Attractions = new ArrayList<Attraction>();
 	}
 }

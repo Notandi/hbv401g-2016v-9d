@@ -10,8 +10,8 @@ public class Interface {
 	public Interface()
 	{
 		this.setDatabaseInterface(new DatabaseInterface());
-		this.setAttractionManager(new AttractionManager(databaseInterface, 1));
-		this.setTripManager(new TripManager(databaseInterface, 2));
+		this.setAttractionManager(new AttractionManager(databaseInterface));
+		this.setTripManager(new TripManager(databaseInterface));
 	}
 
 	public AttractionManager getAttractionManager() {
@@ -21,8 +21,6 @@ public class Interface {
 	public void setAttractionManager(AttractionManager attractionManager) {
 		this.attractionManager = attractionManager;
 	}
-
-	
 
 	public TripManager getTripManager() {
 		return tripManager;
@@ -40,6 +38,11 @@ public class Interface {
 		this.databaseInterface = databaseInterface;
 	}
 	
+	/*public ArrayList<Trip> search(location, date, numberofpeople, type){
+		tripManager.search();
+	}*/
+	
+	/*
 	public static class UserInterface {
 		private int manager;
 		private ArrayList<String> filters;
@@ -87,14 +90,6 @@ public class Interface {
 			this.filters = filters;
 		}
 
-	}
+	}*/
 	
-	public static class AdminInterface extends UserInterface {
-		
-		public AdminInterface() {
-			
-			setFilters(new ArrayList<String>());
-		}
-		
-	}
 }

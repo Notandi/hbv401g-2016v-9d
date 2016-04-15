@@ -1,10 +1,25 @@
 package dayTrip;
 
-public class TripManager extends Manager {
+import java.util.ArrayList;
 
-	public TripManager(DatabaseInterface databaseInterface, int type)
-	{
-		super(databaseInterface, type);
-	}
+public class TripManager{
+
 	
+	private ArrayList<Trip> Trips;
+	private DatabaseInterface databaseInterface; 
+	public TripManager(DatabaseInterface databaseInterface)
+	{
+		this.databaseInterface = databaseInterface;
+		this.Trips = new ArrayList<Trip>();
+	}
+
+	public ArrayList<Trip> search(){
+		
+	}
+	public void createTrip(){
+		
+	}
+	public void removeTrip(){
+		
+	}
 }
