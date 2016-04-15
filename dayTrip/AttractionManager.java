@@ -11,6 +11,11 @@ public class AttractionManager {
 		this.databaseInterface = databaseInterface;
 		this.Attractions = new ArrayList<Attraction>();
 	}
+	public ArrayList<Attraction> search(String type, String location){
+		
+		ArrayList<Attraction> x = new ArrayList<Attraction>();
+		return x;
+	}
 	public void createAttraction(){
 		
 	}

@@ -23,8 +23,7 @@ public class TripManager{
 		
 	}
 	
-	public void bookTrip(int id, int numOfSlots)
-	{
-		
+	public void bookTrip(Trip trip, int numOfSlots) {
+		databaseInterface.updateSlots(trip,  numOfPeople);
 	}
 }
