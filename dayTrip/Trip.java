@@ -3,6 +3,7 @@ package dayTrip;
 import java.util.ArrayList;
 
 public class Trip {
+	private Date date;
 	private String title;
 	private String departureTime;
 	private String location;
@@ -14,8 +15,9 @@ public class Trip {
 	private ArrayList<Integer> attractionIDs;
 	private int slots;
 
-	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
+	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, String attractions, String[] keywords, int slots, Date date) {
 		this.init();
+		this.date = date;
 		this.setTitle(title);
 		this.setDepartureTime(departureTime);
 		this.setLocation(location);
