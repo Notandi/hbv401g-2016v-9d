@@ -7,7 +7,10 @@ public class DatabaseConnectionTester {
 	
 	public static void main(String[] args)
 	{
-		DatabaseInterface dbtester = new DatabaseInterface();
+		//AttractionManager amTest = new AttractionManager();
+		//TripManager tmTest = new TripManager();
+		Interface testface = new Interface();
+		DatabaseInterface dbtester = testface.getDatabaseInterface();
 		dbtester.insertInitialTestData();
 		
 		

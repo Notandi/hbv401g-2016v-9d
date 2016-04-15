@@ -176,21 +176,49 @@ public class DatabaseInterface {
 		
 		try {		   	
 		   	 
+			/* ------------------ INSERT INTO TRIPS ------------------ */
 		      Statement stmt = c.createStatement();
 		      String sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS) " +
 		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, '22/06/2016', 'Bus', '10:00', 30 );"; 
 		      stmt.executeUpdate(sql);
 		      
-		      sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRCIPTION) " +
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS) " +
+	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, '13/06/2016', 'Bus', '06:00', 50 );"; 
+		      stmt.executeUpdate(sql);
+		      
+		      
+		      /* ------------------ INSERT INTO ATTRACTIONS ------------------ */
+		      sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRIPTION) " +
 	                "VALUES ('Gullfoss', 'Waterfall', 'Reykjavík', 'Very nice waterfall lots of gold');"; 
 		      stmt.executeUpdate(sql);
 		      
-		      sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRCIPTION) " +
+		      sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRIPTION) " +
 		                "VALUES ('Geysir', 'Natural wonder', 'Reykjavík', 'A very hot and steamy wonder');"; 
 			  stmt.executeUpdate(sql);
 			  
+			  sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRIPTION) " +
+		                "VALUES ('Þingvellir', 'National park', 'Reykjavík', 'A very beautiful national park filled with geological wonders');"; 
+			  stmt.executeUpdate(sql);
+			  
+			  
+			  
 			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
 					  	"VALUES('Hlíðarfjall', 'Ski resort', 'Akureyri', 'A wonderful ski-resort');";
+			  stmt.executeUpdate(sql);
+			  
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Akureyrarkirkja', 'Church', 'Akureyri', 'A beautiful church with magnificent stairs');";
+			  stmt.executeUpdate(sql);
+			  
+			  
+			  
+			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
+					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5);";
+			  stmt.executeUpdate(sql);
+			  
+			  
+			  
+			  
 		      
 		      /*
 		      sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) " +
@@ -218,11 +246,15 @@ public class DatabaseInterface {
 		try {
 		      
 		      Statement stmt = c.createStatement();
-		      ResultSet rs = stmt.executeQuery( "SELECT * FROM Trips;" );
+		      ResultSet rs = stmt.executeQuery( "SELECT * FROM AttractionsInTrips;" );
 		      while ( rs.next() ) {
-		         int id = rs.getInt("id");
+		         int id = rs.getInt("ID");
+		         int trip_id = rs.getInt("TRIP_ID");
+		         int attraction_id = rs.getInt("ATTRACTION_ID");
 		         
 		         System.out.println( "ID = " + id );
+		         System.out.println( "TRIP_ID = " + trip_id );
+		         System.out.println( "ATTRACTION_ID = " + attraction_id );
 		         
 		      }
 		      rs.close();

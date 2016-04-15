@@ -31,7 +31,7 @@ public class Trip {
 
 	public void init() {
 
-		attractions = new ArrayList<Attraction>();
+		//attractions = new ArrayList<Attraction>();
 		
 	}
 /*
