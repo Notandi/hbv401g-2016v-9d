@@ -7,7 +7,10 @@ public class DatabaseConnectionTester {
 	
 	public static void main(String[] args)
 	{
-		System.out.println("Hello world");
+		DatabaseInterface dbtester = new DatabaseInterface();
+		
+		
+		/*System.out.println("Hello world");
 		Connection c = null;
 		 
 		Statement stmt = null;
@@ -19,7 +22,7 @@ public class DatabaseConnectionTester {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		      System.exit(0);
 		    }
-	   System.out.println("Opened database successfully");
+	   System.out.println("Opened database successfully");*/
 	   
 	   
 	   //CREATE TABLES

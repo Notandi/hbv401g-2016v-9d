@@ -7,9 +7,13 @@ public class DatabaseInterface {
 	
 	private Connection c;
 	
-	public DataBlock select(Query query)
+	public DatabaseInterface()
 	{
 		this.init();
+	}
+	
+	public DataBlock select(Query query)
+	{		
 		
 		int type = query.getType();
 		DataBlock res = new DataBlock(type);
@@ -31,7 +35,69 @@ public class DatabaseInterface {
 		c = null;
 	    try {
 	      Class.forName("org.sqlite.JDBC");
-	      c = DriverManager.getConnection("jdbc:sqlite:test.db");
+	      c = DriverManager.getConnection("jdbc:sqlite:trips.db");
+	      try{
+	    	  try {
+			   	  Statement stmt = c.createStatement();
+			      String sql = "CREATE TABLE Trips " +
+			                   "(ID INT PRIMARY KEY     NOT NULL," +
+			                   " TITLE           TEXT    NOT NULL, " + 
+			                   " LOCATION            INT     NOT NULL, " + 
+			                   " DESCRIPTION        TEXT, " + 
+			                   " PRICE         INT, " +
+			                   " DATE		   TEXT NOT NULL, " +
+			                   " TRANSPORTATION		TEXT, " +
+			                   " DEPARTURE TIME		TEXT, " +
+			                   " SLOTS 				INT)"; 
+			      stmt.executeUpdate(sql);
+			      stmt.close();
+			      //c.close();
+			      
+			    } catch ( Exception e ) {
+			      throw e;
+			    }
+		   System.out.println("Trip table created successfully");
+		   
+		   try {
+			   	  Statement stmt = c.createStatement();
+			      String sql = "CREATE TABLE Attractions " +
+			                   "(ID INT PRIMARY KEY     NOT NULL," +
+			                   " NAME           TEXT    NOT NULL, " + 
+			                   " TYPE           TEXT    , " + 
+			                   " LOCATION       TEXT, " + 
+			                   " DESCRIPTION    TEXT)"; 
+			      stmt.executeUpdate(sql);
+			      stmt.close();
+			      //c.close();
+			      
+			    } catch ( Exception e ) {
+			      throw e;
+			    }
+		   System.out.println("Attractions Table created successfully");
+		   
+		   try {
+			   	  Statement stmt = c.createStatement();
+			      String sql = "CREATE TABLE AttractionsInTrips " +
+			                   "(ID INT PRMARY KEY		 NOT NULL," +
+			                   "TRIP_ID INT 			 NOT NULL," +
+			                   " ATTRACTION_ID INT 		 NOT NULL)"; 
+			      stmt.executeUpdate(sql);
+			      stmt.close();
+			      c.close();
+			      
+			    } catch ( Exception e ) {
+			      throw e;
+			    }
+		   System.out.println("AttractionsInTrips Table created successfully");
+	    	  
+	    	  
+	      }
+	      
+	      catch(Exception ex)
+	      {
+	    	  System.out.println("Database already contains all tables, have fun :)");
+	    	  return;
+	      }
 	    } catch ( Exception e ) {
 	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	      System.exit(0);
@@ -67,7 +133,7 @@ public class DatabaseInterface {
 	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	    	System.exit(0);
 	    }
-	    System.out.println("Opened database successfully");
+	    System.out.println("Updated slots successfully");
 	}
 
 }

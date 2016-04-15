@@ -24,6 +24,6 @@ public class TripManager{
 	}
 	
 	public void bookTrip(Trip trip, int numOfSlots) {
-		databaseInterface.updateSlots(trip,  numOfPeople);
+		databaseInterface.updateSlots(trip,  numOfSlots);
 	}
 }
