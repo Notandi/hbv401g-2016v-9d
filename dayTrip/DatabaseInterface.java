@@ -16,56 +16,6 @@ public class DatabaseInterface {
 		this.init();
 	}
 	
-	public ArrayList<Trip> select(Query query)
-	{		
-		
-		Statement stmt = null;
-		ResultSet rs = null;
-		int id = 0;
-		
-	    try {
-	    	stmt = c.createStatement();
-		    String sql = "SELECT ATTRACTION_ID FROM AttractionsInTrips WHERE TRIP_ID =";
-		    rs = stmt.executeQuery(sql);
-		    id = rs.getInt("ID");
-		    c.commit();
-		    stmt.close();
-	    } catch ( Exception e ) {
-	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-	    	System.exit(0);
-	    }
-	    
-	    ArrayList<Integer> attractionIDs = selectAttractionIDs(id);
-	    attractionManager.locateExistingAttractions(attractionIDs);
-	    
-		ArrayList<Trip> trap = new ArrayList<Trip>();
-		return trap;
-	}
-	
-	// Selectar attraction id's þegar Trip er constructað.
-	public ArrayList<Integer> selectAttractionIDs(int id) {		
-		
-		Statement stmt = null;
-		ArrayList<Integer> ids = null;
-		
-	    try {
-	    	ids = new ArrayList<Integer>();
-	    	stmt = c.createStatement();
-		    String sql = "SELECT ATTRACTION_ID FROM AttractionsInTrips WHERE TRIP_ID =" + id;
-		    ResultSet rs = stmt.executeQuery(sql);
-		    while( rs.next() ) {
-		    	ids.add(rs.getInt("ATTRACTION_ID"));
-		    }
-		    c.commit();
-		    stmt.close();
-	    } catch ( Exception e ) {
-	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-	    	System.exit(0);
-	    }
-	    System.out.println("Returned ID's succesfully!");
-	    return ids;	    
-	}
-	
 	private void init() {
 		c = null;
 	    try {
@@ -156,6 +106,87 @@ public class DatabaseInterface {
 	    }
 	    System.out.println("Opened database successfully");
 	}
+	
+	public ArrayList<Trip> select(Query query)
+	{		
+		Statement stmt = null;
+		ResultSet rs = null;
+		int id = 0;
+		String type = query.getType();
+		String location = query.getLocation();
+		String date = dateToString(query.getDate());
+		int numOfPeople = query.getNumOfPeople();
+		
+		
+		
+	    try {
+	    	stmt = c.createStatement();
+		    String sql = "SELECT * FROM Trip"
+		    rs = stmt.executeQuery(sql);
+		    id = rs.getInt("ID");
+		    c.commit();
+		    stmt.close();
+	    } catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+		
+		
+	   
+	    
+		return trap;
+	}
+	
+	public String dateToString(Date date)
+	{
+		String stringDate = "";
+		stringDate = date.getDay()+"/"+date.getMonth()+"/"+date.getYear();
+		return stringDate;
+	}
+	
+	public Date stringToDate(String date)
+	{
+		
+	}
+	
+	
+	public ArrayList<Attraction> findAttractionsInTrip(int trip_id)
+	{
+		
+	    
+	    ArrayList<Integer> attractionIDs = selectAttractionIDs(id);//Sækja öll IDs á attractions sem eru í þessu Trip
+	    Pair existingAttractions = attractionManager.locateExistingAttractions(attractionIDs);
+	    attractionIDs = existingAttractions.getIds();
+	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
+	    ArrayList<Attraction> managerAttractions = existingAttractions.getAttractions();
+	    managerAttractions.addAll(databaseAttractions);
+	}
+	
+	
+	public ArrayList<Integer> selectAttractionIDs(int id) {		
+		
+		Statement stmt = null;
+		ArrayList<Integer> ids = null;
+		
+	    try {
+	    	ids = new ArrayList<Integer>();
+	    	stmt = c.createStatement();
+		    String sql = "SELECT ATTRACTION_ID FROM AttractionsInTrips WHERE TRIP_ID =" + id;
+		    ResultSet rs = stmt.executeQuery(sql);
+		    while( rs.next() ) {
+		    	ids.add(rs.getInt("ATTRACTION_ID"));
+		    }
+		    c.commit();
+		    stmt.close();
+	    } catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+	    System.out.println("Returned ID's succesfully!");
+	    return ids;	    
+	}
+	
+	
 	
 	public int insert(Pair[] query)
 	{		

@@ -14,6 +14,24 @@ public class AttractionManager {
 	
 	public Pair locateExistingAttractions(ArrayList<Integer> ids) {
 		
+		ArrayList <Attraction> foundAttractions = new ArrayList<Attraction>();
+		
+		for(int i = 0; i<ids.size(); i++)
+		{
+			for(int k = 0; k<Attractions.size(); k++)
+			{
+				Attraction attraction = Attractions.get(k);
+				if(ids.get(i) == attraction.getId())
+				{
+					foundAttractions.add(attraction);		
+					ids.remove(i);
+					i--;					
+				}
+			}
+		}
+		
+		Pair attractionsFound = new Pair(ids,foundAttractions);
+		return attractionsFound;
 		
 	}
 	
