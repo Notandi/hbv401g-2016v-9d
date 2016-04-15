@@ -38,9 +38,9 @@ public class Interface {
 		this.databaseInterface = databaseInterface;
 	}
 	
-	/*public ArrayList<Trip> search(location, date, numberofpeople, type){
-		tripManager.search();
-	}*/
+	public ArrayList<Trip> search(String location, Date date, int numberofpeople, Stirng type){
+		tripManager.search(location, date , numberofpeople, type);
+	}
 	
 	/*
 	public static class UserInterface {

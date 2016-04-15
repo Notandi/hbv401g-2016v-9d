@@ -11,4 +11,10 @@ public class AttractionManager {
 		this.databaseInterface = databaseInterface;
 		this.Attractions = new ArrayList<Attraction>();
 	}
+	public void createAttraction(){
+		
+	}
+	public void removeAttraction(){
+		
+	}
 }
