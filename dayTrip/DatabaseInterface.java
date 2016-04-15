@@ -10,7 +10,7 @@ public class DatabaseInterface {
 		int type = query.getType();
 		DataBlock res = new DataBlock(type);
 		
-		switch(type){
+		/*switch(type){
 		case 1:	ArrayList<Attraction> mockresultAttraction =  MockData.MockAttraction(query);
 				res.setAttractions(mockresultAttraction);
 				break;
@@ -18,18 +18,20 @@ public class DatabaseInterface {
 				res.setTrips(mockresultTrip);
 				break;
 		}
-		return res;
+		return res;*/
+		DataBlock datablock = new DataBlock(2);
+		return datablock;
 	}
 	
 	public int insert(Pair[] query)
 	{		
 		//if()
-		return MockData.insert(query);
+		return 1;
 	}
 	
 	public int delete(Pair[] query)
 	{
-		return MockData.delete(query);
+		return 1;
 	}
 
 }
