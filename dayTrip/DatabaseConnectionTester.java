@@ -28,10 +28,14 @@ public class DatabaseConnectionTester {
 		   	  stmt = c.createStatement();
 		      String sql = "CREATE TABLE Trips " +
 		                   "(ID INT PRIMARY KEY     NOT NULL," +
-		                   " NAME           TEXT    NOT NULL, " + 
-		                   " AGE            INT     NOT NULL, " + 
-		                   " ADDRESS        CHAR(50), " + 
-		                   " SALARY         REAL)"; 
+		                   " TITLE           TEXT    NOT NULL, " + 
+		                   " LOCATION            INT     NOT NULL, " + 
+		                   " DESCRIPTION        TEXT, " + 
+		                   " PRICE         INT, " +
+		                   " DATE		   TEXT NOT NULL, " +
+		                   " TRANSPORTATION		TEXT, " +
+		                   " DEPARTURE TIME		TEXT, +
+		                   " SLOTS 				INT)"; 
 		      stmt.executeUpdate(sql);
 		      stmt.close();
 		      c.close();
@@ -40,16 +44,16 @@ public class DatabaseConnectionTester {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		      System.exit(0);
 		    }
-	   System.out.println("Table created successfully");
+	   System.out.println("Trip table created successfully");
 	   
 	   try {
 		   	  stmt = c.createStatement();
-		      String sql = "CREATE TABLE COMPANY " +
+		      String sql = "CREATE TABLE Attractions " +
 		                   "(ID INT PRIMARY KEY     NOT NULL," +
 		                   " NAME           TEXT    NOT NULL, " + 
-		                   " AGE            INT     NOT NULL, " + 
-		                   " ADDRESS        CHAR(50), " + 
-		                   " SALARY         REAL)"; 
+		                   " TYPE           TEXT    , " + 
+		                   " LOCATION       TEXT, " + 
+		                   " DESCRIPTION    TEXT)"; 
 		      stmt.executeUpdate(sql);
 		      stmt.close();
 		      c.close();
@@ -58,7 +62,25 @@ public class DatabaseConnectionTester {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		      System.exit(0);
 		    }
-	   System.out.println("Table created successfully");*/
+	   System.out.println("Attractions Table created successfully");
+	   
+	   try {
+		   	  stmt = c.createStatement();
+		      String sql = "CREATE TABLE AttractionsInTrips " +
+		                   "(ID INT PRMARY KEY		 NOT NULL," +
+		                    "(TRIP_ID INT 			 NOT NULL," +
+		                   " ATTRACTION_ID INT 		 NOT NULL)"; 
+		      stmt.executeUpdate(sql);
+		      stmt.close();
+		      c.close();
+		      
+		    } catch ( Exception e ) {
+		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+		      System.exit(0);
+		    }
+	   System.out.println("AttractionsInTrips Table created successfully");
+	   
+	   */
 	   
 	   
 	  /* try {

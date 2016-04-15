@@ -2,12 +2,13 @@ package dayTrip;
 
 public class Attraction {
 	
+	private String name;
 	private String type;
 	private String location;
 	private String description;
 	
-	public Attraction(String type, String location, String description) {
-		
+	public Attraction(String type, String location, String description, String name) {
+		this.setName(name);
 		this.setType(type);
 		this.setLocation(location);
 		this.setDescription(description);
@@ -34,6 +35,14 @@ public class Attraction {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }
