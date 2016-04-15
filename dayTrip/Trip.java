@@ -76,13 +76,6 @@ public class Trip {
 		}
 	}
 */
-	public String[] getKeywords() {
-		return keywords;
-	}
-
-	public void setKeywords(String[] keywords) {
-		this.keywords = keywords;
-	}
 
 	public int getDifficulty() {
 		return difficulty;
