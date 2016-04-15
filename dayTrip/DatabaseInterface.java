@@ -146,7 +146,12 @@ public class DatabaseInterface {
 	
 	public Date stringToDate(String date)
 	{
+		int day = Integer.parseInt(date.substring(0,2));
+		int month = Integer.parseInt(date.substring(3,5));
+		int year = Integer.parseInt(date.substring(6,10));
 		
+		Date returnDate = new Date(day, month, year);
+		return returnDate;
 	}
 	
 	
