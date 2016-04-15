@@ -22,4 +22,9 @@ public class TripManager{
 	public void removeTrip(){
 		
 	}
+	
+	public void bookTrip(int id, int numOfSlots)
+	{
+		
+	}
 }
