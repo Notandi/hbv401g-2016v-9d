@@ -11,11 +11,6 @@ public class AttractionManager {
 		this.databaseInterface = databaseInterface;
 		this.Attractions = new ArrayList<Attraction>();
 	}
-	public ArrayList<Attraction> search(String type, String location){
-		
-		ArrayList<Attraction> x = new ArrayList<Attraction>();
-		return x;
-	}
 	
 	public Attraction findAttractionById(int id){
 		for (int i = 0; i < Attractions.size(); i++){
@@ -24,7 +19,8 @@ public class AttractionManager {
 				return atr;
 			}
 		}
-		return null;
+		Attractions.add(databaseInterface.selectAttraction(id));
+		return Attractions.get(Attractions.size());
 		
 	}
 	public void createAttraction(){
