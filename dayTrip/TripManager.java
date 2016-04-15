@@ -14,7 +14,7 @@ public class TripManager{
 	}
 
 	public ArrayList<Trip> search(String location, Date date, int numberofpeople, String type){
-		
+		return new ArrayList<Trip>();
 	}
 	public void createTrip(){
 		
