@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Trip {
 	private String title;
+	private String departureTime;
 	private String location;
 	private int id;
 	private String description;
@@ -12,9 +13,10 @@ public class Trip {
 	private String attractions;
 	private int slots;
 
-	public Trip(String title, String location, int id, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
+	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
 		this.init();
 		this.setTitle(title);
+		this.setDepartureTime(departureTime);
 		this.setLocation(location);
 		this.setId(id);
 		this.setDescription(description);
@@ -43,9 +45,14 @@ public class Trip {
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getDepartureTime() {
+		return departureTime;
+	}
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
 	}
 
 	public String getDescription() {
