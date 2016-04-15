@@ -8,6 +8,7 @@ public class DatabaseConnectionTester {
 	public static void main(String[] args)
 	{
 		DatabaseInterface dbtester = new DatabaseInterface();
+		dbtester.insertInitialTestData();
 		
 		
 		/*System.out.println("Hello world");
