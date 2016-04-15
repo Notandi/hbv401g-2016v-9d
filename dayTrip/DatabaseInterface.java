@@ -115,6 +115,22 @@ public class DatabaseInterface {
 	{
 		return 1;
 	}
+	public Attraction selectAttraction(int id){
+		Attraction atr = null;
+		Statement stmt = null;
+		try{
+			stmt = c.createStatement();
+		    ResultSet rs = stmt.executeQuery( "SELECT * FROM Attractions WHERE ID = " + id + ";" );
+		    atr = new Attraction(rs.getInt("ID"),rs.getString("TYPE"),rs.getString("LOCATION"),rs.getString("DESCRIPTION"),rs.getString("NAME"));
+		    rs.close();
+		    stmt.close();
+			
+		}catch ( Exception e ) {
+	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	    	System.exit(0);
+	    }
+	    return atr;
+	}
 	
 	public void updateSlots(Trip trip, int numOfPeople) {
 		
