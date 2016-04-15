@@ -3,6 +3,7 @@ package dayTrip;
 import java.util.ArrayList;
 
 public class Trip {
+	private String title;
 	private String location;
 	private int id;
 	private int difficulty;
@@ -12,8 +13,9 @@ public class Trip {
 	private String attractions;
 	private int slots;
 
-	public Trip(String location, int id, int difficulty, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
+	public Trip(String title, String location, int id, int difficulty, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
 		this.init();
+		this.setTitle(title);
 		this.setLocation(location);
 		this.setId(id);
 		this.setDifficulty(difficulty);
@@ -39,6 +41,13 @@ public class Trip {
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getDescription() {
