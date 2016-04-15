@@ -12,15 +12,16 @@ public class Trip {
 	private String attractions;
 	private int slots;
 
-	public Trip(String location, int difficulty, String description, int price, String transportation, String attractions, String[] keywords) {
+	public Trip(String location, int id, int difficulty, String description, int price, String transportation, String attractions, String[] keywords, int slots) {
 		this.init();
 		this.setLocation(location);
+		this.setId(id);
 		this.setDifficulty(difficulty);
 		this.setDescription(description);
 		this.setPrice(price);
 		this.setTransportation(transportation);
 		this.setAttraction(attractions);
-		this.setKeywords(keywords);
+		this.setSlots(slots);
 	}
 
 	public void init() {
@@ -83,6 +84,21 @@ public class Trip {
 
 	public void setDifficulty(int difficulty) {
 		this.difficulty = difficulty;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getSlots() {
+		return slots;
+	}
+
+	public void setSlots(int slots) {
+		this.slots = slots;
 	}
 
 	public String getLocation() {
