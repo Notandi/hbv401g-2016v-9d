@@ -208,12 +208,14 @@ public class DatabaseInterface {
 	    System.out.println("attractionIDS í trippinu length eftir minnis check: " + attractionIDs.size());
 	    //Næ í öll attractions sem vantar upp á úr database, sem voru ekki til í attractionManager
 	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
-	    System.out.println("Attractions sem fást úr database: " + databaseAttractions.size());
+	    //System.out.println("Attractions sem fást úr database: " + databaseAttractions.size());
 	    ArrayList<Attraction> managerAttractions = existingAttractions.getAttractions();
 	    // Hendi attractions sem voru fundin í database inn í Attraction manager
 	    attractionManager.addToArrayList(databaseAttractions);
 	    //Splæsi saman manager attractionunum og databaseAttractionunum
-	    managerAttractions.addAll(databaseAttractions);
+	    if (databaseAttractions != null){
+		    managerAttractions.addAll(databaseAttractions);
+	    }
 	    return managerAttractions;
 	}
 	
