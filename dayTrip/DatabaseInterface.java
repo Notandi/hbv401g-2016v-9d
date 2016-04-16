@@ -181,6 +181,8 @@ public class DatabaseInterface {
 	    //Næ í öll attractions sem vantar upp á úr database, sem voru ekki til í attractionManager
 	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
 	    ArrayList<Attraction> managerAttractions = existingAttractions.getAttractions();
+	    // Hendi attractions sem voru fundin í database inn í Attraction manager
+	    attractionManager.addToArrayList(databaseAttractions);
 	    //Splæsi saman manager attractionunum og databaseAttractionunum
 	    managerAttractions.addAll(databaseAttractions);
 	    return managerAttractions;

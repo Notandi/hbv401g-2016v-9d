@@ -34,7 +34,9 @@ public class AttractionManager {
 		return attractionsFound;
 		
 	}
-	
+	public void addToArrayList(ArrayList<Attraction> databaseAttractions){
+		Attractions.addAll(databaseAttractions);
+	}
 	/*public Attraction findAttractionById(int id){
 		for (int i = 0; i < Attractions.size(); i++){
 			Attraction atr = Attractions.get(i);
