@@ -6,14 +6,16 @@ public class Query {
 	
 	private String type;
 	private String location;
-	private Date date;
+	private Date startDate;
+	private Date endDate;
 	private int numOfPeople;
 	
 	
-	public Query(String location, Date date, int numOfPeople, String type) {
+	public Query(String location, Date startDate, Date endDate, int numOfPeople, String type) {
 		setType(type);
 		setLocation(location);
-		setDate(date);	
+		setStartDate(startDate);
+		setEndDate(endDate);
 		setNumOfPeople(numOfPeople);
 	}
 
@@ -38,16 +40,6 @@ public class Query {
 	}
 
 
-	public Date getDate() {
-		return date;
-	}
-
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-
 	public int getNumOfPeople() {
 		return numOfPeople;
 	}
@@ -55,6 +47,26 @@ public class Query {
 
 	public void setNumOfPeople(int numOfPeople) {
 		this.numOfPeople = numOfPeople;
+	}
+
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
 	
 	
