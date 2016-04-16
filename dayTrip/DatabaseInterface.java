@@ -197,17 +197,18 @@ public class DatabaseInterface {
 	
 	public ArrayList<Attraction> findAttractionsInTrip(int trip_id)
 	{
-		
+		System.out.println("");
+		System.out.println("TRIP_ID : " + trip_id);
 		//Sækja öll IDs á attractions sem eru í þessu Trip
 	    ArrayList<Integer> attractionIDs = selectAttractionIDs(trip_id);
-	    System.out.println("attractionIDS í trippinu length: " + attractionIDs.size());
+	    System.out.println("Heildar attractionIDS í trippinu length: " + attractionIDs.size());
 	    //Athuga hvaða attractions eru núþegar til í attractionManager
 	    Pair existingAttractions = attractionManager.locateExistingAttractions(attractionIDs);
 	    attractionIDs = existingAttractions.getIds();
 	    System.out.println("attractionIDS í trippinu length eftir minnis check: " + attractionIDs.size());
 	    //Næ í öll attractions sem vantar upp á úr database, sem voru ekki til í attractionManager
 	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
-	    System.out.println("databaseattractions: " + databaseAttractions.size());
+	    System.out.println("Attractions sem fást úr database: " + databaseAttractions.size());
 	    ArrayList<Attraction> managerAttractions = existingAttractions.getAttractions();
 	    // Hendi attractions sem voru fundin í database inn í Attraction manager
 	    attractionManager.addToArrayList(databaseAttractions);
@@ -340,8 +341,8 @@ public class DatabaseInterface {
 		      stmt.executeUpdate(sql);
 		      //Trip #8
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Sight seeing in Reykjavík', 'Reykjavík','Drive around Reykjavík and see the best places!', 3100, 20160604, 'Bus', '15:00', 42, 'Family friendly' );"; 
-		      stmt.executeUpdate(sql);
+	                   "VALUES ('Sight seeing in Reykjavík', 'Akureyri','Drive around Reykjavík and see the best places!', 3100, 20160604, 'Bus', '15:00', 42, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING
 		      //Trip #9
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 	                   "VALUES ('Whale watching', 'Reykjavík','Watch whales in faxaflói!', 19000, 20160605, 'none', '16:00', 20, 'Family friendly' );"; 

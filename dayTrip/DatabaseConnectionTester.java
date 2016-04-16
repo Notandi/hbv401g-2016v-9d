@@ -20,6 +20,7 @@ public class DatabaseConnectionTester {
 		String type = "Family friendly";
 		ArrayList<Trip> res = testface.search(location,startDate,endDate,numberOfPeople,type);
 		res = testface.search(location,startDate,endDate,numberOfPeople,type);
+		
 		//System.out.println("Length of result: " + res.size());
 		
 		/*for(int i = 0; i<res.size(); i++)
