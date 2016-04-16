@@ -46,7 +46,8 @@ public class DatabaseInterface {
 			                   " DATE		   TEXT NOT NULL, " +
 			                   " TRANSPORTATION		TEXT, " +
 			                   " DEPARTURE_TIME		TEXT, " +
-			                   " SLOTS 				INT)"; 
+			                   " SLOTS 				INT, " +
+			                   " TYPE               TEXT)"; 
 			      stmt.executeUpdate(sql);
 			      stmt.close();
 			      
@@ -114,7 +115,9 @@ public class DatabaseInterface {
 		ResultSet rs = null;
 		String type = query.getType();
 		String location = query.getLocation();
-		String date = dateToString(query.getDate());
+		String startDate = dateToString(query.getStartDate());
+		String endDate = dateToString(query.getEndDate());
+		//String date = dateToString(query.getDate());
 		int numOfPeople = query.getNumOfPeople();
 		
 		
