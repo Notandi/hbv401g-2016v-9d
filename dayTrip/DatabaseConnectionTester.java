@@ -17,14 +17,15 @@ public class DatabaseConnectionTester {
 		Date startDate = new Date(20,06,2016);
 		Date endDate = new Date(23,06,2016);
 		int numberOfPeople = 5;
-		String type = "Familyfriendly";
+		String type = "Family friendly";
 		ArrayList<Trip> res = testface.search(location,startDate,endDate,numberOfPeople,type);
 		
-		/*
+		System.out.println("Length of result: " + res.size());
+		
 		for(int i = 0; i<res.size(); i++)
 		{
-			System.out.println(res.get(i));
-		}*/
+			System.out.println("Trip: " + res.get(i).getTitle());
+		}
 		
 	   
 	   
