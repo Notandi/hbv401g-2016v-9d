@@ -155,6 +155,22 @@ public class DatabaseInterface {
 		return resultTrips;
 	}
 	
+	public int dateToInt (Date date){
+		int intDate;
+		intDate = date.getDay();
+		intDate += date.getMonth()*100;
+		intDate += date.getYear()*10000;
+		return intDate;
+	}
+	public Date intToDate (int date){
+		int day = date % 100;
+		int month = ((date - day)  % 10000 )/ 100 ;
+		int year = (date - day - month)/ 10000;
+		Date returnDate = new Date(day,month,year);
+		return returnDate;
+	}
+	
+	/*
 	public String dateToString(Date date)
 	{
 		String stringDate = "";
@@ -170,7 +186,7 @@ public class DatabaseInterface {
 		
 		Date returnDate = new Date(day, month, year);
 		return returnDate;
-	}
+	}*/
 	
 	
 	public ArrayList<Attraction> findAttractionsInTrip(int trip_id)
