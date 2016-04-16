@@ -35,6 +35,7 @@ public class AttractionManager {
 		
 	}
 	public void addToArrayList(ArrayList<Attraction> databaseAttractions){
+		if(databaseAttractions == null) return;
 		Attractions.addAll(databaseAttractions);
 	}
 	public void createAttraction(){
