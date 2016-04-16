@@ -42,6 +42,9 @@ public class Interface {
 	
 	public ArrayList<Trip> search(String location, Date startDate,Date endDate, int numberofpeople, String type){
 		Query query = new Query(location,startDate,endDate,numberofpeople,type);
+		/*System.out.println("test data: " + query.getStartDate().getDay());
+		ArrayList<Trip> triptest = new ArrayList<Trip>();
+		return triptest;*/
 		return tripManager.search(query);
 	}
 	public void createTrip(){

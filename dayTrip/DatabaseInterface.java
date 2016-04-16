@@ -110,7 +110,13 @@ public class DatabaseInterface {
 	}
 	
 	public ArrayList<Trip> select(Query query)
-	{		
+	{	
+		
+		
+		System.out.println("Penis XD");
+		ArrayList<Trip> triptest = new ArrayList<Trip>();
+		triptest.add(new Trip(null, null, null, 0, null, 0, null, null, 0, null, null));
+		return triptest;
 		ArrayList<Trip> resultTrips = new ArrayList<Trip>();
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -120,6 +126,10 @@ public class DatabaseInterface {
 		int endDate = dateToInt(query.getEndDate());
 		//String date = dateToString(query.getDate());
 		int numOfPeople = query.getNumOfPeople();
+		
+		
+		/*ArrayList<Trip> triptest = new ArrayList<Trip>();
+		return triptest;*/
 		
 		
 		

@@ -14,6 +14,10 @@ public class TripManager{
 	}
 
 	public ArrayList<Trip> search(Query query){
+		/*System.out.println("Made it to tripManager");
+		
+		ArrayList<Trip> triptest = new ArrayList<Trip>();
+		return triptest;*/
 		return this.databaseInterface.select(query);
 	}
 	
