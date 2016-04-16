@@ -285,48 +285,74 @@ public class DatabaseInterface {
 		   	 
 			/* ------------------ INSERT INTO TRIPS ------------------ */
 		      Statement stmt = c.createStatement();
-		      String sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS) " +
-		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, '22/06/2016', 'Bus', '10:00', 30 );"; 
+		      //Trip #1
+		      String sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, '22/06/2016', 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		      //Trip #2
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, '13/06/2016', 'Bus', '06:00', 50, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		      //Trip #3
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Diamond Circle', 'Egilsstaðir','Witness the beauty of the Great canyon Ásbyrgi and Dettifoss', 169000, '30/06/2016', 'Helicopter', '12:00', 6, 'Luxury' );"; 
+		      stmt.executeUpdate(sql);
+		      //Trip #4
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Hornstrandir', 'Akureyri','Beautiful place located in the west fjords of icelands', 29000, '06/06/2016', 'Ferry', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		      //Trip #5
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Snorkeling in Silfra', 'Reykjavík','Snorkle between two continents in the crystal clear water of Silfra!', 69000, '02/06/2016', 'Bus', '15:00', 6, 'Adventure' );"; 
 		      stmt.executeUpdate(sql);
 		      
-		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS) " +
-	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, '13/06/2016', 'Bus', '06:00', 50 );"; 
-		      stmt.executeUpdate(sql);
+		      
 		      
 		      
 		      /* ------------------ INSERT INTO ATTRACTIONS ------------------ */
+		      // Attraction #1
 		      sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRIPTION) " +
 	                "VALUES ('Gullfoss', 'Waterfall', 'Reykjavík', 'Very nice waterfall lots of gold');"; 
 		      stmt.executeUpdate(sql);
-		      
+		      // Attraction #2
 		      sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRIPTION) " +
 		                "VALUES ('Geysir', 'Natural wonder', 'Reykjavík', 'A very hot and steamy wonder');"; 
 			  stmt.executeUpdate(sql);
-			  
+			  // Attraction #3
 			  sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRIPTION) " +
 		                "VALUES ('Þingvellir', 'National park', 'Reykjavík', 'A very beautiful national park filled with geological wonders');"; 
 			  stmt.executeUpdate(sql);
-			  
-			  
-			  
+			  // Attraction #4
 			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
 					  	"VALUES('Hlíðarfjall', 'Ski resort', 'Akureyri', 'A wonderful ski-resort');";
 			  stmt.executeUpdate(sql);
-			  
+			  // Attraction #5
 			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
 					  	"VALUES('Akureyrarkirkja', 'Church', 'Akureyri', 'A beautiful church with magnificent stairs');";
 			  stmt.executeUpdate(sql);
-			  
-			  
-			  
-			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
-					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5);";
+			  // Attraction #6  
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Ásbyrgi', 'National park', 'Egilsstaðir', 'A nature wonder which looks like a horseshoe from the sky');";
+			  stmt.executeUpdate(sql);
+			  // Attraction #7
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Dettifoss', 'National park', 'Egilsstaðir', 'The most powerful waterfall in Europe');";
+			  stmt.executeUpdate(sql);
+			  // Attraction #8
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Hornstrandir', 'National park', 'Akureyri', 'Beautiful place');";
+			  stmt.executeUpdate(sql);
+			  // Attraction #9
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Silfra', 'National park', 'Reykjavík', ' The beautiful crack between the North American and Eurasian continents');";
 			  stmt.executeUpdate(sql);
 			  
 			  
+			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
+					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (3,6), (3,7), (4,8), (5,3), (5,9);";
+			  stmt.executeUpdate(sql);
 			  
 			  
-		      
 		      /*
 		      sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) " +
 		            "VALUES (70, 'Allen', 25, 'Texas', 15000.00 );"; 
