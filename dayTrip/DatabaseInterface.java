@@ -342,15 +342,15 @@ public class DatabaseInterface {
 		      //Trip #8
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 	                   "VALUES ('Sight seeing in Reykjavík', 'Akureyri','Drive around Reykjavík and see the best places!', 3100, 20160604, 'Bus', '15:00', 42, 'Family friendly' );"; 
-		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING
+		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING - Akureyri -> Reykjavík
 		      //Trip #9
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Whale watching', 'Reykjavík','Watch whales in faxaflói!', 19000, 20160605, 'none', '16:00', 20, 'Family friendly' );"; 
-		      stmt.executeUpdate(sql);
+	                   "VALUES ('Whale watching', 'Akureyri','Watch whales in faxaflói!', 19000, 20160605, 'none', '16:00', 20, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING - Akureyri -> Reykjavík
 		      //Trip #10
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Bláa lónið', 'Reykjavík','Swim in the famous geothermal spa', 8000, 20160613, 'bus', '13:00', 40, 'Family friendly' );"; 
-		      stmt.executeUpdate(sql);
+	                   "VALUES ('Bláa lónið', 'Akureyri','Swim in the famous geothermal spa', 8000, 20160613, 'bus', '13:00', 40, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING - Akureyri -> Reykjavík
 		      
 		      
 		      
