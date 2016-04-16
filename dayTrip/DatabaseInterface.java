@@ -287,23 +287,23 @@ public class DatabaseInterface {
 		      Statement stmt = c.createStatement();
 		      //Trip #1
 		      String sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, '22/06/2016', 'Bus', '10:00', 30, 'Family friendly' );"; 
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160620, 'Bus', '10:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #2
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, '13/06/2016', 'Bus', '06:00', 50, 'Family friendly' );"; 
+	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, 20160613, 'Bus', '06:00', 50, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #3
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Diamond Circle', 'Egilsstaðir','Witness the beauty of the Great canyon Ásbyrgi and Dettifoss', 169000, '30/06/2016', 'Helicopter', '12:00', 6, 'Luxury' );"; 
+	                   "VALUES ('Diamond Circle', 'Egilsstaðir','Witness the beauty of the Great canyon Ásbyrgi and Dettifoss', 169000, 20160630, 'Helicopter', '12:00', 6, 'Luxury' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #4
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Hornstrandir', 'Akureyri','Beautiful place located in the west fjords of icelands', 29000, '06/06/2016', 'Ferry', '10:00', 30, 'Family friendly' );"; 
+	                   "VALUES ('Hornstrandir', 'Akureyri','Beautiful place located in the west fjords of icelands', 29000, 20160606, 'Ferry', '10:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #5
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Snorkeling in Silfra', 'Reykjavík','Snorkle between two continents in the crystal clear water of Silfra!', 69000, '02/06/2016', 'Bus', '15:00', 6, 'Adventure' );"; 
+	                   "VALUES ('Snorkeling in Silfra', 'Reykjavík','Snorkle between two continents in the crystal clear water of Silfra!', 69000, 20160602, 'Bus', '15:00', 6, 'Adventure' );"; 
 		      stmt.executeUpdate(sql);
 		      
 		      
