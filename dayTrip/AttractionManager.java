@@ -24,8 +24,9 @@ public class AttractionManager {
 				if(ids.get(i) == attraction.getId())
 				{
 					foundAttractions.add(attraction);		
-					ids.remove(i);
-					i--;					
+					ids.remove(i);	
+					i++;
+					break;
 				}
 			}
 		}

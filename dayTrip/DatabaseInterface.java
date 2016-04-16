@@ -346,6 +346,7 @@ public class DatabaseInterface {
 		      
 		      
 		      
+		      
 		      /* ------------------ INSERT INTO ATTRACTIONS ------------------ */
 		      // Attraction #1
 		      sql = "INSERT INTO Attractions (NAME,TYPE,LOCATION,DESCRIPTION) " +

@@ -22,17 +22,17 @@ public class DatabaseConnectionTester {
 		res = testface.search(location,startDate,endDate,numberOfPeople,type);
 		System.out.println("Length of result: " + res.size());
 		
-		for(int i = 0; i<res.size(); i++)
+		/*for(int i = 0; i<res.size(); i++)
 		{
 			System.out.println("Trip: " + res.get(i).getTitle());
 			ArrayList<Attraction> attractions = res.get(i).getAttractions();
 			System.out.println("Length of attractions: "+attractions.size());
-			for(int k = 0;k<attractions.size(); k++)
+			/*for(int k = 0;k<attractions.size(); k++)
 			{
-				System.out.println("Attraction name: "+attractions.get(k).getName());
+				//System.out.println("Attraction name: "+attractions.get(k).getName());
 			}
 			
-		}
+		}*/
 		
 	   
 	   
