@@ -13,8 +13,9 @@ public class Trip {
 	private String transportation;
 	private ArrayList<Attraction> attractions;
 	private int slots;
+	private String type;
 
-	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, ArrayList<Attraction> attractions, int slots, Date date) 
+	public Trip(String title, String departureTime, String location, int id, String description, int price, String transportation, ArrayList<Attraction> attractions, int slots, Date date, String type) 
 	{
 		this.init();
 		this.setDate(date);
@@ -27,6 +28,7 @@ public class Trip {
 		this.setTransportation(transportation);
 		this.setAttraction(attractions);
 		this.setSlots(slots);
+		this.setType(type);
 	}
 
 	public void init() {
@@ -125,5 +127,13 @@ public class Trip {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }
