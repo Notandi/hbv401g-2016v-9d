@@ -128,8 +128,9 @@ public class DatabaseInterface {
 		
 	    try {
 	    	stmt = c.createStatement();
-		    String sql = "SELECT * FROM Trips WHERE TYPE = '"+type+"' AND LOCATION = '"+location
-		    		+ "' AND DATE > "+startDate+" AND DATE < "+endDate+ " AND SLOTS > "+numOfPeople+";";
+		    /*String sql = "SELECT * FROM Trips WHERE TYPE = '"+type+"' AND LOCATION = '"+location
+		    		+ "' AND DATE > "+startDate+" AND DATE < "+endDate+ " AND SLOTS > "+numOfPeople+";";*/
+	    	String sql = "SELECT * FROM Trips";
 		    rs = stmt.executeQuery(sql);
 		    while ( rs.next() ) {
 		         int trip_id = rs.getInt("ID");
@@ -258,7 +259,7 @@ public class DatabaseInterface {
 			String selectAttractions = "SELECT * FROM Attractions WHERE ID = " + ids.get(0);
 		    for(int i = 1; i<ids.size(); i++)
 		    {
-		    	selectAttractions += "AND ID = " + ids.get(i);		    	
+		    	selectAttractions += " AND ID = " + ids.get(i);		    	
 		    }
 		    
 		    selectAttractions += ";";
