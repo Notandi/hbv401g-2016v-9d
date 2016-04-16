@@ -16,16 +16,15 @@ public class AttractionManager {
 		
 		ArrayList <Attraction> foundAttractions = new ArrayList<Attraction>();
 		
-		for(int i = 0; i<ids.size(); i++)
+		for(int i = ids.size()-1; i>0; i--)
 		{
 			for(int k = 0; k<Attractions.size(); k++)
 			{
 				Attraction attraction = Attractions.get(k);
 				if(ids.get(i) == attraction.getId())
 				{
-					foundAttractions.add(attraction);		
+					foundAttractions.add(attraction);	
 					ids.remove(i);	
-					i++;
 					break;
 				}
 			}
