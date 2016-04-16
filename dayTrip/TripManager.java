@@ -14,7 +14,7 @@ public class TripManager{
 	}
 
 	public ArrayList<Trip> search(Query query){
-		return new ArrayList<Trip>();
+		return this.databaseInterface.select(query);
 	}
 	
 	public void addTrip(Trip trip)
