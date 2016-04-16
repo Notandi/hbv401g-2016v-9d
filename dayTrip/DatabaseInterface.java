@@ -137,9 +137,10 @@ public class DatabaseInterface {
 		         int trip_price = rs.getInt("PRICE");
 		         String trip_transportation = rs.getString("TRANSPORTATION");
 		         int trip_slots = rs.getInt("SLOTS");
+		         String trip_type = rs.getString("TYPE");
 		         ArrayList<Attraction> trip_attractions = findAttractionsInTrip(trip_id);	         
 		         Trip trip = new Trip(trip_title,trip_departureTime,trip_location,trip_id,
-		        		              trip_description,trip_price,trip_transportation,trip_attractions,trip_slots,trip_date);
+		        		              trip_description,trip_price,trip_transportation,trip_attractions,trip_slots,trip_date,trip_type);
 		         this.tripManager.addTrip(trip);
 		         resultTrips.add(trip);	         
 		      }
