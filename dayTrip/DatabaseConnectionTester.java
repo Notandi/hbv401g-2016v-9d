@@ -14,10 +14,11 @@ public class DatabaseConnectionTester {
 		DatabaseInterface dbtester = testface.getDatabaseInterface();
 		dbtester.insertInitialTestData();
 		String location = "Reykjavík";
-		Date date = new Date(22,06,2016);
+		Date startDate = new Date(20,06,2016);
+		Date endDate = new Date(23,06,2016);
 		int numberOfPeople = 5;
 		String type = "Family friendly";
-		ArrayList<Trip> res = testface.search(location,date,numberOfPeople,type);
+		ArrayList<Trip> res = testface.search(location,startDate,endDate,numberOfPeople,type);
 		
 		for(int i = 0; i<res.size(); i++)
 		{

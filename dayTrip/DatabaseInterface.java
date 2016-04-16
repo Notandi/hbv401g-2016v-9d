@@ -43,7 +43,7 @@ public class DatabaseInterface {
 			                   " LOCATION            INT     NOT NULL, " + 
 			                   " DESCRIPTION        TEXT, " + 
 			                   " PRICE         INT, " +
-			                   " DATE		   TEXT NOT NULL, " +
+			                   " DATE		   INT NOT NULL, " +
 			                   " TRANSPORTATION		TEXT, " +
 			                   " DEPARTURE_TIME		TEXT, " +
 			                   " SLOTS 				INT, " +
@@ -115,8 +115,8 @@ public class DatabaseInterface {
 		ResultSet rs = null;
 		String type = query.getType();
 		String location = query.getLocation();
-		String startDate = dateToString(query.getStartDate());
-		String endDate = dateToString(query.getEndDate());
+		int startDate = dateToInt(query.getStartDate());
+		int endDate = dateToInt(query.getEndDate());
 		//String date = dateToString(query.getDate());
 		int numOfPeople = query.getNumOfPeople();
 		
@@ -125,11 +125,11 @@ public class DatabaseInterface {
 	    try {
 	    	stmt = c.createStatement();
 		    String sql = "SELECT * FROM Trip WHERE TYPE = "+type+" AND LOCATION = "+location+" "
-		    		+ "AND DATE = "+date+"AND SLOTS > "+numOfPeople+";";
+		    		+ " AND DATE > "+startDate+" AND DATE < "+endDate+ " AND SLOTS > "+numOfPeople+";";
 		    rs = stmt.executeQuery(sql);
 		    while ( rs.next() ) {
 		         int trip_id = rs.getInt("ID");
-		         Date trip_date = stringToDate(rs.getString("DATE"));
+		         Date trip_date = intToDate(rs.getString("DATE"));
 		         String trip_title = rs.getString("TITLE");
 		         String trip_departureTime = rs.getString("DEPARTURE_TIME");
 		         String trip_location = rs.getString("LOCATION");
