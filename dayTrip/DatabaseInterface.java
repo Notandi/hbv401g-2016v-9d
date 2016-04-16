@@ -129,7 +129,7 @@ public class DatabaseInterface {
 		    rs = stmt.executeQuery(sql);
 		    while ( rs.next() ) {
 		         int trip_id = rs.getInt("ID");
-		         Date trip_date = intToDate(rs.getString("DATE"));
+		         Date trip_date = intToDate(rs.getInt("DATE"));
 		         String trip_title = rs.getString("TITLE");
 		         String trip_departureTime = rs.getString("DEPARTURE_TIME");
 		         String trip_location = rs.getString("LOCATION");
