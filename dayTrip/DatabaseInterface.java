@@ -128,9 +128,9 @@ public class DatabaseInterface {
 		
 	    try {
 	    	stmt = c.createStatement();
-		    /*String sql = "SELECT * FROM Trips WHERE TYPE = '"+type+"' AND LOCATION = '"+location
-		    		+ "' AND DATE > "+startDate+" AND DATE < "+endDate+ " AND SLOTS > "+numOfPeople+";";*/
-	    	String sql = "SELECT * FROM Trips";
+		    String sql = "SELECT * FROM Trips WHERE TYPE = '"+type+"' AND LOCATION = '"+location
+		    		+ "' AND DATE >= "+startDate+" AND DATE <= "+endDate+ " AND SLOTS > "+numOfPeople+";";
+	    	//String sql = "SELECT * FROM Trips";
 		    rs = stmt.executeQuery(sql);
 		    while ( rs.next() ) {
 		         int trip_id = rs.getInt("ID");
@@ -200,11 +200,14 @@ public class DatabaseInterface {
 		
 		//Sækja öll IDs á attractions sem eru í þessu Trip
 	    ArrayList<Integer> attractionIDs = selectAttractionIDs(trip_id);
+	    System.out.println("attractionIDS í trippinu length: " + attractionIDs.size());
 	    //Athuga hvaða attractions eru núþegar til í attractionManager
 	    Pair existingAttractions = attractionManager.locateExistingAttractions(attractionIDs);
 	    attractionIDs = existingAttractions.getIds();
+	    System.out.println("attractionIDS í trippinu length eftir minnis check: " + attractionIDs.size());
 	    //Næ í öll attractions sem vantar upp á úr database, sem voru ekki til í attractionManager
 	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
+	    System.out.println("databaseattractions: " + databaseAttractions.size());
 	    ArrayList<Attraction> managerAttractions = existingAttractions.getAttractions();
 	    // Hendi attractions sem voru fundin í database inn í Attraction manager
 	    attractionManager.addToArrayList(databaseAttractions);
@@ -259,7 +262,7 @@ public class DatabaseInterface {
 			String selectAttractions = "SELECT * FROM Attractions WHERE ID = " + ids.get(0);
 		    for(int i = 1; i<ids.size(); i++)
 		    {
-		    	selectAttractions += " AND ID = " + ids.get(i);		    	
+		    	selectAttractions += " OR ID = " + ids.get(i);		    	
 		    }
 		    
 		    selectAttractions += ";";

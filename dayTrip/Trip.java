@@ -26,7 +26,7 @@ public class Trip {
 		this.setDescription(description);
 		this.setPrice(price);
 		this.setTransportation(transportation);
-		this.setAttraction(attractions);
+		this.setAttractions(attractions);
 		this.setSlots(slots);
 		this.setType(type);
 	}
@@ -78,11 +78,11 @@ public class Trip {
 		this.transportation = transportation;
 	}
 	
-	public ArrayList<Attraction> getAttraction() {
+	public ArrayList<Attraction> getAttractions() {
 		return attractions;
 	}
 
-	public void setAttraction(ArrayList<Attraction> attractions) {
+	public void setAttractions(ArrayList<Attraction> attractions) {
 		this.attractions = attractions;
 	}
 /*
