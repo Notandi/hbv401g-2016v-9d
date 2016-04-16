@@ -353,6 +353,14 @@ public class DatabaseInterface {
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 	                   "VALUES ('Bláa lónið', 'Reykjavík','Swim in the famous geothermal spa', 8000, 20160613, 'bus', '13:00', 40, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING - Akureyri -> Reykjavík
+		      //Trip #11 
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Vesturbæjarlaug', 'Reykjavík','Swim in the typical Icelandic swimming pool', 900, 20160613, 'Walk', '06:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		      //Trip #12
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Lauagardalslaug', 'Reykjavík','Swim in the typical Icelandic swimming pool', 900, 20160614, 'Walk', '06:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
 		      
 		      
 		      
@@ -406,15 +414,23 @@ public class DatabaseInterface {
 			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
 					  	"VALUES('Hallgrímskirkja', 'Church', 'Reykjavík', 'The tall church of Reykjavík that everybody loves');";
 			  stmt.executeUpdate(sql);
-			// Attraction #13
+			  // Attraction #13
 			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
 					  	"VALUES('Bláa lónið', 'Spa', 'Reykjavík', 'The geothermal pool, one of the most popular attractions in Iceland');";
+			  stmt.executeUpdate(sql);
+			  // Attraction #14
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Vesturbæjarlaug', 'Swimming pool', 'Reykjavík', 'The typical icelandic swimming pool');";
+			  stmt.executeUpdate(sql);
+			  // Attraction #15
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Laugardalslaug', 'Swimming pool', 'Reykjavík', 'The typical icelandic swimming pool');";
 			  stmt.executeUpdate(sql);
 
 			  
 			  
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
-					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (3,6), (3,7), (4,8), (5,3), (5,9), (6,10), (7,11), (8,12), (8,10), (9,10), (10,13) ;";
+					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (3,6), (3,7), (4,8), (5,3), (5,9), (6,10), (7,11), (8,12), (8,10), (9,10), (10,13), (11,14), (11,12), (11,10), (12,15), (12,12), (12,10) ;";
 			  stmt.executeUpdate(sql);
 			  
 			  
