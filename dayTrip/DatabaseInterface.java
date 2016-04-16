@@ -9,13 +9,14 @@ public class DatabaseInterface {
 	private AttractionManager attractionManager;
 	private TripManager tripManager;
 	
-	public DatabaseInterface(AttractionManager am, TripManager tm)
+	public DatabaseInterface()
 	{
-		attractionManager = am;
-		tripManager = tm;
 		this.init();
 	}
-	
+	public void addManagers(AttractionManager am, TripManager tm){
+		attractionManager = am;
+		tripManager = tm;
+	}
 	private void init() {
 		c = null;
 	    try {
