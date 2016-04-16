@@ -342,7 +342,14 @@ public class DatabaseInterface {
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 	                   "VALUES ('Sight seeing in Reykjavík', 'Reykjavík','Drive around Reykjavík and see the best places!', 3100, 20160604, 'Bus', '15:00', 42, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
-		      
+		      //Trip #9
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Whale watching', 'Reykjavík','Watch whales in faxaflói!', 19000, 20160605, 'none', '16:00', 20, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		      //Trip #10
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+	                   "VALUES ('Bláa lónið', 'Reykjavík','Swim in the famous geothermal spa', 8000, 20160613, 'bus', '13:00', 40, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
 		      
 		      
 		      
@@ -396,10 +403,15 @@ public class DatabaseInterface {
 			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
 					  	"VALUES('Hallgrímskirkja', 'Church', 'Reykjavík', 'The tall church of Reykjavík that everybody loves');";
 			  stmt.executeUpdate(sql);
+			// Attraction #13
+			  sql = "INSERT INTO Attractions (NAME, TYPE, LOCATION, DESCRIPTION) "+
+					  	"VALUES('Bláa lónið', 'Spa', 'Reykjavík', 'The geothermal pool, one of the most popular attractions in Iceland');";
+			  stmt.executeUpdate(sql);
+
 			  
 			  
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
-					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (3,6), (3,7), (4,8), (5,3), (5,9), (6,10), (7,11), (8,12), (8,10) ;";
+					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (3,6), (3,7), (4,8), (5,3), (5,9), (6,10), (7,11), (8,12), (8,10), (9,10), (10,13) ;";
 			  stmt.executeUpdate(sql);
 			  
 			  
