@@ -16,7 +16,7 @@ public class AttractionManager {
 		
 		ArrayList <Attraction> foundAttractions = new ArrayList<Attraction>();
 		
-		for(int i = ids.size()-1; i>0; i--)
+		for(int i = ids.size()-1; i>=0; i--)
 		{
 			for(int k = 0; k<Attractions.size(); k++)
 			{
