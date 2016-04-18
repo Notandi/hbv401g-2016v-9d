@@ -12,6 +12,16 @@ public class TripManager{
 		this.databaseInterface = databaseInterface;
 		this.Trips = new ArrayList<Trip>();		
 	}
+	
+	public void BookTrip(Trip trip, int numOfPeople){
+		for (int i = 0;i < Trips.size(); i++ ){
+			Trip managedTrip = Trips.get(i);
+			if(trip.getId() == managedTrip.getId()){
+				managedTrip.book(numOfPeople);
+				databaseInterface.updateSlots( managedTrip, numOfPeople);
+			}
+		}
+	}
 
 	public ArrayList<Trip> search(Query query){
 		return this.databaseInterface.select(query);

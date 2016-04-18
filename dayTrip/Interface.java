@@ -15,6 +15,10 @@ public class Interface {
 		databaseInterface.addManagers(attractionManager,tripManager);
 
 	}
+	
+	public void book(Trip trip, int numOfPeople){
+		tripManager.BookTrip(trip, numOfPeople);
+	}
 
 	public AttractionManager getAttractionManager() {
 		return attractionManager;
