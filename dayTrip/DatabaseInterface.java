@@ -122,7 +122,9 @@ public class DatabaseInterface {
 		//String date = dateToString(query.getDate());
 		int numOfPeople = query.getNumOfPeople();
 		
-	
+		ArrayList<Trip> tripsInDB = tripManager.findMatchingTrips(query);
+		
+		
 		
 		
 		
@@ -130,6 +132,13 @@ public class DatabaseInterface {
 	    	stmt = c.createStatement();
 		    String sql = "SELECT * FROM Trips WHERE TYPE = '"+type+"' AND LOCATION = '"+location
 		    		+ "' AND DATE >= "+startDate+" AND DATE <= "+endDate+ " AND SLOTS > "+numOfPeople+";";
+		    if(tripsInDB.size() > 0) {
+		    	for(int i = 1; i<tripsInDB.size(); i++)
+		    	{
+		    		sql += " AND ID != " + tripsInDB.get(i).getId();		    	
+		    	}
+		    	sql += ";";
+		    }
 	    	//String sql = "SELECT * FROM Trips";
 		    rs = stmt.executeQuery(sql);
 		    while ( rs.next() ) {
