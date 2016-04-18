@@ -22,6 +22,32 @@ public class TripManager{
 		Trips.add(trip);
 	}
 	
+	public ArrayList<Trip> findMatchingTrips(Query query)
+	{
+		ArrayList<Trip> res = new ArrayList<Trip>();
+		boolean match;
+		for(int i = 0; i<Trips.size(); i++)
+		{
+			int date = dateToInt(Trips.get(i).getDate());
+			match = ((query.getType() == Trips.get(i).getType()) && (query.getLocation() == Trips.get(i).getLocation()) &&
+					 (query.getNumOfPeople() < Trips.get(i).getSlots()) && 
+					 ((dateToInt(query.getStartDate()) < date) && (dateToInt(query.getEndDate())) > date));
+					 
+			if(match) res.add(Trips.get(i));  					
+						
+		}
+		
+		return res;
+	}
+	
+	public int dateToInt (Date date){
+		int intDate;
+		intDate = date.getDay();
+		intDate += date.getMonth()*100;
+		intDate += date.getYear()*10000;
+		return intDate;
+	}
+	
 	public void createTrip(){
 		
 	}

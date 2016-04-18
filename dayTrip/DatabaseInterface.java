@@ -95,10 +95,7 @@ public class DatabaseInterface {
 	      
 	      catch(Exception e)
 	      {
-	    	  /*
-	    	  System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-	  	      System.exit(0);*/
-	    	  
+	    	  	    	  
 	    	  System.out.println("Database already contains all tables, have fun :)");
 	    	  return;
 	      }
