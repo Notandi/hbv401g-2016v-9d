@@ -312,7 +312,7 @@ public class DatabaseInterface {
 	    return attractions;
 	}
 	
-	public void updateSlots(Trip trip, int numOfPeople) {
+	public boolean updateSlots(Trip trip, int numOfPeople) {
 		
 		Statement stmt = null;
 		int currentSlots = trip.getSlots();
@@ -329,7 +329,7 @@ public class DatabaseInterface {
 	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	    	System.exit(0);
 	    }
-	    System.out.println("Updated slots successfully");
+	    return true;
 	}
 	
 	public void insertInitialTestData() {

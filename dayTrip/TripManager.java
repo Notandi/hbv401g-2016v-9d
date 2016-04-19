@@ -13,13 +13,14 @@ public class TripManager{
 		this.Trips = new ArrayList<Trip>();		
 	}
 	
-	public void BookTrip(Trip trip, int numOfPeople){
+	public boolean BookTrip(Trip trip, int numOfPeople){
 		for (int i = 0;i < Trips.size(); i++ ){
 			Trip managedTrip = Trips.get(i);
 			if(trip.getId() == managedTrip.getId()){
-				databaseInterface.updateSlots( managedTrip, numOfPeople);
+				return(databaseInterface.updateSlots( managedTrip, numOfPeople));
 			}
 		}
+		return false;
 	}
 
 	public ArrayList<Trip> search(Query query){
