@@ -340,53 +340,92 @@ public class DatabaseInterface {
 		      Statement stmt = c.createStatement();
 		      //Trip #1
 		      String sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160620, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160601, 'Bus', '10:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #2
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, 20160613, 'Bus', '06:00', 50, 'Family friendly' );"; 
+	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, 20160602, 'Bus', '06:00', 50, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #3
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Diamond Circle', 'Egilsstaðir','Witness the beauty of the Great canyon Ásbyrgi and Dettifoss', 169000, 20160630, 'Helicopter', '12:00', 6, 'Luxury' );"; 
+	                   "VALUES ('Diamond Circle', 'Egilsstaðir','Witness the beauty of the Great canyon Ásbyrgi and Dettifoss', 169000, 20160603, 'Helicopter', '12:00', 6, 'Luxury' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #4
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Hornstrandir', 'Akureyri','Beautiful place located in the west fjords of Iceland', 29000, 20160606, 'Ferry', '10:00', 30, 'Family friendly' );"; 
+	                   "VALUES ('Hornstrandir', 'Akureyri','Beautiful place located in the west fjords of Iceland', 29000, 20160604, 'Ferry', '10:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #5
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Snorkeling in Silfra', 'Reykjavík','Snorkle between two continents in the crystal clear water of Silfra!', 69000, 20160602, 'Bus', '15:00', 6, 'Adventure' );"; 
+	                   "VALUES ('Snorkeling in Silfra', 'Reykjavík','Snorkle between two continents in the crystal clear water of Silfra!', 69000, 20160605, 'Bus', '15:00', 6, 'Adventure' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #6
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Esjan', 'Reykjavík','Hike the beautiful mountain Esjan', 5900, 20160603, 'Bus', '09:00', 30, 'Adventure' );"; 
+	                   "VALUES ('Esjan', 'Reykjavík','Hike the beautiful mountain Esjan', 5900, 20160606, 'Bus', '09:00', 30, 'Adventure' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #7
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('River rafting', 'Akureyri','River rafting in the amazing river Jökulsá eystri', 15900, 20160609, 'Bus', '08:00', 16, 'Adventure' );"; 
+	                   "VALUES ('River rafting', 'Akureyri','River rafting in the amazing river Jökulsá eystri', 15900, 20160607, 'Bus', '08:00', 16, 'Adventure' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #8
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Sight seeing in Reykjavík', 'Akureyri','Drive around Reykjavík and see the best places!', 3100, 20160604, 'Bus', '15:00', 42, 'Family friendly' );"; 
+	                   "VALUES ('Sight seeing in Reykjavík', 'Akureyri','Drive around Reykjavík and see the best places!', 3100, 20160608, 'Bus', '15:00', 42, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING - Akureyri -> Reykjavík
 		      //Trip #9
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Whale watching', 'Reykjavík','Watch whales in faxaflói!', 19000, 20160605, 'none', '16:00', 20, 'Family friendly' );"; 
+	                   "VALUES ('Whale watching', 'Reykjavík','Watch whales in faxaflói!', 19000, 20160609, 'none', '16:00', 20, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING - Akureyri -> Reykjavík
 		      //Trip #10
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Bláa lónið', 'Reykjavík','Swim in the famous geothermal spa', 8000, 20160613, 'bus', '13:00', 40, 'Family friendly' );"; 
+	                   "VALUES ('Bláa lónið', 'Reykjavík','Swim in the famous geothermal spa', 8000, 20160610, 'bus', '13:00', 40, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);//MUNA AÐ LAGA EFTIR DEBUGGING - Akureyri -> Reykjavík
 		      //Trip #11 
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Vesturbæjarlaug', 'Reykjavík','Swim in the typical Icelandic swimming pool', 900, 20160613, 'Walk', '06:00', 30, 'Family friendly' );"; 
+	                   "VALUES ('Vesturbæjarlaug', 'Reykjavík','Swim in the typical Icelandic swimming pool', 900, 20160611, 'Walk', '06:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
 		      //Trip #12
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
-	                   "VALUES ('Lauagardalslaug', 'Reykjavík','Swim in the typical Icelandic swimming pool', 900, 20160614, 'Walk', '06:00', 30, 'Family friendly' );"; 
+	                   "VALUES ('Lauagardalslaug', 'Reykjavík','Swim in the typical Icelandic swimming pool', 900, 20160612, 'Walk', '06:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
-		      
+		      //Trip #13 (golden circle #2)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160613, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #14 (golden circle #3)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160614, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #15 (golden circle #4)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160615, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #16 (golden circle #5)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160616, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #17 (golden circle #6)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160617, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #18 (golden circle #6)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160618, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #19 (golden circle #7)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160619, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #20 (golden circle #8)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160620, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #21 (golden circle #9)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160621, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
+		    //Trip #22 (golden circle #10)
+		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
+		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160622, 'Bus', '10:00', 30, 'Family friendly' );"; 
+		      stmt.executeUpdate(sql);
 		      
 		      
 		      
@@ -456,6 +495,10 @@ public class DatabaseInterface {
 			  
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
 					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (3,6), (3,7), (4,8), (5,3), (5,9), (6,10), (7,11), (8,12), (8,10), (9,10), (10,13), (11,14), (11,12), (11,10), (12,15), (12,12), (12,10) ;";
+			  stmt.executeUpdate(sql);
+			  // insert fyrir golden circle ferðir 2 til 10
+			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
+					  	"VALUES (13,1), (13,2), (13,3), (14,1), (14,2), (14,3), (15,1), (15,2), (15,3), (16,1), (16,2), (16,3),(17,1), (17,2), (17,3),(18,1), (18,2), (18,3), (19,1), (19,2), (19,3), (20,1), (20,2), (20,3), (21,1), (21,2), (21,3), (22,1), (22,2), (22,3)  ;";
 			  stmt.executeUpdate(sql);
 			  
 	
