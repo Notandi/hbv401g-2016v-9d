@@ -16,8 +16,9 @@ public class Interface {
 
 	}
 	
-	public void book(Trip trip, int numOfPeople){
-		tripManager.BookTrip(trip, numOfPeople);
+	public boolean book(Trip trip, int numOfPeople){
+		if(trip.getSlots() < numOfPeople) return false;
+		return tripManager.BookTrip(trip, numOfPeople);
 	}
 
 	public AttractionManager getAttractionManager() {
