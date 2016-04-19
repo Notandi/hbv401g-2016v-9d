@@ -64,10 +64,7 @@ public class Trip {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public void book(int numOfPeople){
-		this.slots -= numOfPeople;
-	}
-
+	
 	public String getTransportation() {
 		return transportation;
 	}

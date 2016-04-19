@@ -17,7 +17,6 @@ public class TripManager{
 		for (int i = 0;i < Trips.size(); i++ ){
 			Trip managedTrip = Trips.get(i);
 			if(trip.getId() == managedTrip.getId()){
-				managedTrip.book(numOfPeople);
 				databaseInterface.updateSlots( managedTrip, numOfPeople);
 			}
 		}
