@@ -12,7 +12,7 @@ public class DatabaseInterface {
 	public DatabaseInterface()
 	{
 		this.initConnection();
-		//this.init();
+		
 	}
 	public void addManagers(AttractionManager am, TripManager tm){
 		attractionManager = am;
@@ -93,7 +93,7 @@ public class DatabaseInterface {
 			    } catch ( Exception e ) {
 			      throw e;
 			    }
-		   //System.out.println("Trip table created successfully");
+		   
 		   
 		   try {
 			   	  Statement stmt = c.createStatement();
@@ -110,7 +110,7 @@ public class DatabaseInterface {
 			    } catch ( Exception e ) {
 			      throw e;
 			    }
-		   //System.out.println("Attractions Table created successfully");
+		   
 		   
 		   try {
 			   	  Statement stmt = c.createStatement();
@@ -125,7 +125,7 @@ public class DatabaseInterface {
 			    } catch ( Exception e ) {
 			      throw e;
 			    }
-		   //System.out.println("AttractionsInTrips Table created successfully");
+		   
 	    	  
 	    	  
 	      }
@@ -222,18 +222,14 @@ public class DatabaseInterface {
 	
 	public ArrayList<Attraction> findAttractionsInTrip(int trip_id)
 	{
-		//System.out.println("");
-		//System.out.println("TRIP_ID : " + trip_id);
+		
 		//Sækja öll IDs á attractions sem eru í þessu Trip
-	    ArrayList<Integer> attractionIDs = selectAttractionIDs(trip_id);
-	    //System.out.println("Heildar attractionIDS í trippinu length: " + attractionIDs.size());
+	    ArrayList<Integer> attractionIDs = selectAttractionIDs(trip_id);	
 	    //Athuga hvaða attractions eru núþegar til í attractionManager
 	    Pair existingAttractions = attractionManager.locateExistingAttractions(attractionIDs);
-	    attractionIDs = existingAttractions.getIds();
-	    //System.out.println("attractionIDS í trippinu length eftir minnis check: " + attractionIDs.size());
+	    attractionIDs = existingAttractions.getIds();	    
 	    //Næ í öll attractions sem vantar upp á úr database, sem voru ekki til í attractionManager
-	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
-	    //System.out.println("Attractions sem fást úr database: " + databaseAttractions.size());
+	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);	    
 	    ArrayList<Attraction> managerAttractions = existingAttractions.getAttractions();
 	    // Hendi attractions sem voru fundin í database inn í Attraction manager
 	    attractionManager.addToArrayList(databaseAttractions);
@@ -264,7 +260,7 @@ public class DatabaseInterface {
 	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	    	System.exit(0);
 	    }
-	    //System.out.println("Returned ID's succesfully!");
+	    
 	    return ids;	    
 	}
 	
