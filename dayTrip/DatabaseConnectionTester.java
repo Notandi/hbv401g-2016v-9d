@@ -37,8 +37,8 @@ public class DatabaseConnectionTester {
 			}
 			
 		}
-		testface.book(res.get(0), 3);
 		System.out.println();
+		System.out.println(testface.book(res.get(0),3));
 		
 		res = testface.search(location,startDate,endDate,numberOfPeople,type);
 		for(int i = 0; i<res.size(); i++)
@@ -53,11 +53,7 @@ public class DatabaseConnectionTester {
 				//System.out.println("Attraction name: "+attractions.get(k).getName());
 			}
 			
-		}
-
-		
-	
-		
+		}		
 	   
 	   
 	}

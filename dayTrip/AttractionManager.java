@@ -5,10 +5,9 @@ import java.util.ArrayList;
 public class AttractionManager {
 	
 	private ArrayList<Attraction> Attractions;
-	private DatabaseInterface databaseInterface; 
-	public AttractionManager(DatabaseInterface databaseInterface)
-	{
-		this.databaseInterface = databaseInterface;
+	 
+	public AttractionManager()
+	{		
 		this.Attractions = new ArrayList<Attraction>();
 	}
 	

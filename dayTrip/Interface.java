@@ -10,7 +10,7 @@ public class Interface {
 	public Interface()
 	{
 		this.setDatabaseInterface(new DatabaseInterface());
-		this.setAttractionManager(new AttractionManager(databaseInterface));
+		this.setAttractionManager(new AttractionManager());
 		this.setTripManager(new TripManager(databaseInterface));
 		databaseInterface.addManagers(attractionManager,tripManager);
 
