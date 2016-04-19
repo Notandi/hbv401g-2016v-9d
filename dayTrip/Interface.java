@@ -3,9 +3,9 @@ package dayTrip;
 import java.util.ArrayList;
 
 public class Interface {
-	private static AttractionManager attractionManager;
-	private static TripManager tripManager;
-	private static DatabaseInterface databaseInterface;
+	private  AttractionManager attractionManager;
+	private  TripManager tripManager;
+	private  DatabaseInterface databaseInterface;
 	
 	public Interface()
 	{
@@ -46,9 +46,7 @@ public class Interface {
 	
 	public ArrayList<Trip> search(String location, Date startDate,Date endDate, int numberofpeople, String type){
 		Query query = new Query(location,startDate,endDate,numberofpeople,type);
-		/*System.out.println("test data: " + query.getStartDate().getDay());
-		ArrayList<Trip> triptest = new ArrayList<Trip>();
-		return triptest;*/
+		
 		return tripManager.search(query);
 	}
 	public void createTrip(){
@@ -64,54 +62,5 @@ public class Interface {
 		attractionManager.removeAttraction();
 	}
 	
-	/*
-	public static class UserInterface {
-		private int manager;
-		private ArrayList<String> filters;
-		
-		public UserInterface()
-		{
-			setFilters(new ArrayList<String>());
-		}
-		
-		public DataBlock search(String searchString)
-		{
-			Query query = new Query(manager, searchString, this.filters);
-			DataBlock res;
-			switch (manager){
-			case 1:
-				res = attractionManager.search(query);				
-				break;
-			case 2:
-				res = tripManager.search(query);
-				break;	
-			default:
-				res = null;
-			}
-		
-			return res;
-		}
-		
-		public void removeFilter(String filter){
-			this.filters.remove(filter);			
-		};
-		
-		public int getManager() {return manager;}
-		
-		public void setManager(int newManager){this.manager = newManager;}
-
-		public ArrayList<String> getFilters() {
-			return filters;
-		}
-
-		public void addFilter(String filter){
-			this.filters.add(filter);
-		}
-		
-		public void setFilters(ArrayList<String> filters) {
-			this.filters = filters;
-		}
-
-	}*/
 	
 }

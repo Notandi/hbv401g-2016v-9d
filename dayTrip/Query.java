@@ -1,7 +1,5 @@
 package dayTrip;
 
-import java.util.ArrayList;
-
 public class Query {
 	
 	private String type;

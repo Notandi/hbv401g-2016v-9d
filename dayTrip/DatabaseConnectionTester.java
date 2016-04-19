@@ -26,11 +26,11 @@ public class DatabaseConnectionTester {
 		
 		for(int i = 0; i<res.size(); i++)
 		{
-			System.out.println("Trip: " + res.get(i).getTitle());
-			System.out.println("ID: " + res.get(i).getId());
-			System.out.println("slots :" + res.get(i).getSlots());
+			System.out.println("Trip before booking: " + res.get(i).getTitle());
+			System.out.println("ID before booking: " + res.get(i).getId());
+			System.out.println("slots before booking :" + res.get(i).getSlots());
 			ArrayList<Attraction> attractions = res.get(i).getAttractions();
-			System.out.println("Length of attractions: "+attractions.size());
+			System.out.println("Length of attractions before booking: "+attractions.size());
 			for(int k = 0;k<attractions.size(); k++)
 			{
 				//System.out.println("Attraction name: "+attractions.get(k).getName());
@@ -38,15 +38,16 @@ public class DatabaseConnectionTester {
 			
 		}
 		testface.book(res.get(0), 3);
+		System.out.println();
 		
 		res = testface.search(location,startDate,endDate,numberOfPeople,type);
 		for(int i = 0; i<res.size(); i++)
 		{
-			System.out.println("Trip: " + res.get(i).getTitle());
-			System.out.println("ID: " + res.get(i).getId());
-			System.out.println("slots :" + res.get(i).getSlots());
+			System.out.println("Trip after booking: " + res.get(i).getTitle());
+			System.out.println("ID after booking: " + res.get(i).getId());
+			System.out.println("slots after booking :" + res.get(i).getSlots());
 			ArrayList<Attraction> attractions = res.get(i).getAttractions();
-			System.out.println("Length of attractions: "+attractions.size());
+			System.out.println("Length of attractions after booking: "+attractions.size());
 			for(int k = 0;k<attractions.size(); k++)
 			{
 				//System.out.println("Attraction name: "+attractions.get(k).getName());

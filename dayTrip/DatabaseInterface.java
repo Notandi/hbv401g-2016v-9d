@@ -316,11 +316,12 @@ public class DatabaseInterface {
 		
 		Statement stmt = null;
 		int currentSlots = trip.getSlots();
+		int newSlots = currentSlots - numOfPeople;
 		trip.setSlots(currentSlots - numOfPeople);
 		
 	    try {
 	    	stmt = c.createStatement();
-		    String sql = "UPDATE Trips set SLOTS = " + trip.getSlots() + " where ID=" + trip.getId();
+		    String sql = "UPDATE Trips set SLOTS = " + newSlots + " where ID=" + trip.getId();
 		    stmt.executeUpdate(sql);
 		    c.commit();
 		    stmt.close();
