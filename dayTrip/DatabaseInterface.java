@@ -338,6 +338,7 @@ public class DatabaseInterface {
 		      String sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160601, 'Bus', '10:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
+		      
 		      //Trip #2
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 	                   "VALUES ('Ski-church trip', 'Akureyri','A wonderful ski-trip starting with morning prayer in the local church', 15000, 20160602, 'Bus', '06:00', 50, 'Family friendly' );"; 
@@ -382,6 +383,7 @@ public class DatabaseInterface {
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 	                   "VALUES ('Lauagardalslaug', 'Reykjavík','Swim in the typical Icelandic swimming pool', 900, 20160612, 'Walk', '06:00', 30, 'Family friendly' );"; 
 		      stmt.executeUpdate(sql);
+		      
 		      //Trip #13 (golden circle #2)
 		      sql = "INSERT INTO Trips (TITLE,LOCATION,DESCRIPTION,PRICE,DATE,TRANSPORTATION,DEPARTURE_TIME,SLOTS, TYPE) " +
 		                   "VALUES ('Golden Circle', 'Reykjavík','Wonderful circular trip', 5000, 20160604, 'Bus', '10:00', 30, 'Family friendly' );"; 
@@ -542,21 +544,24 @@ public class DatabaseInterface {
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) " +
 					  	"VALUES (3,6), (3,7), (4,8), (5,3), (5,9), (6,10), (8,12), (8,10), (9,10), (10,13), (11,14), (11,12), (11,10), (12,15), (12,12), (12,10) ;";
 			  stmt.executeUpdate(sql);
+			  
 			  // insert fyrir golden circle ferðir 1 til 10
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
 					  	"VALUES (1,1), (1,2), (1,3), (13,1), (13,2), (13,3), (14,1), (14,2), (14,3), (15,1), (15,2), (15,3), (16,1), (16,2), (16,3),(17,1), (17,2), (17,3),(18,1), (18,2), (18,3), (19,1), (19,2), (19,3), (20,1), (20,2), (20,3), (21,1), (21,2), (21,3), (22,1), (22,2), (22,3)  ;";
 			  stmt.executeUpdate(sql);
+			  
 			// insert fyrir river rafting ferðir 1 til 5
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
-					  	"(7,11), (23,11), (24,11), (25,11), (26,11)  ;";
+					  	"VALUES (7,11), (23,11), (24,11), (25,11), (26,11)  ;";
 			  stmt.executeUpdate(sql);
+			  
 			// insert fyrir snokeling 1 til 5
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
-					  	"(5,3), (5,9), (27,3), (27,9), (28,3), (28,9), (29,3), (29,9), (30,3), (30,9)  ;";
+					  	"VALUES (5,3), (5,9), (27,3), (27,9), (28,3), (28,9), (29,3), (29,9), (30,3), (30,9)  ;";
 			  stmt.executeUpdate(sql);
 			// insert fyrir ski church trip 1 til 4
 			  sql = "INSERT INTO AttractionsInTrips (TRIP_ID, ATTRACTION_ID) "+
-					  	"(2,4), (2,5), (31,4), (31,5), (32,4), (32,5), (33,4), (33,5) ;";
+					  	"VALUES (2,4), (2,5), (31,4), (31,5), (32,4), (32,5), (33,4), (33,5) ;";
 			  stmt.executeUpdate(sql);
 
 		      stmt.close();

@@ -11,8 +11,8 @@ public class DatabaseConnectionTester {
 		
 		Interface testface = new Interface();
 		DatabaseInterface dbtester = testface.getDatabaseInterface();
-		//dbtester.init();
-		//dbtester.insertInitialTestData();
+		dbtester.init();
+		dbtester.insertInitialTestData();
 		String location = "Reykjavík";
 		Date startDate = new Date(1,06,2016);
 		Date endDate = new Date(30,06,2016);
