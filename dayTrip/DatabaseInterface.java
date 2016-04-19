@@ -11,13 +11,50 @@ public class DatabaseInterface {
 	
 	public DatabaseInterface()
 	{
-		this.init();
+		this.initConnection();
+		//this.init();
 	}
 	public void addManagers(AttractionManager am, TripManager tm){
 		attractionManager = am;
 		tripManager = tm;
 	}
-	private void init() {
+	
+	public void initConnection()
+	{
+		c = null;
+	    try {
+	      Class.forName("org.sqlite.JDBC");
+	      c = DriverManager.getConnection("jdbc:sqlite:trips.db");
+	      c.setAutoCommit(false);
+	      try{
+	    	  try {
+	    		  Statement stmt = c.createStatement();
+	    		  String sql = "PRAGMA foreign_keys = ON";
+	    		  stmt.executeUpdate(sql);
+	    		  stmt.close();	    		  
+	    	  }
+	    	  catch(Exception e)
+	    	  {
+	    		System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	  	    	System.exit(0);
+	    	  }
+	      }
+	      catch(Exception e)
+	      {
+	    	  System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	  	    	System.exit(0);
+	      }
+	    }
+	    catch(Exception e)
+	    {
+	    	  System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	  	    	System.exit(0);
+	    }
+	    	  
+	    	  
+	}
+	
+	public void init() {
 		c = null;
 	    try {
 	      Class.forName("org.sqlite.JDBC");
@@ -56,7 +93,7 @@ public class DatabaseInterface {
 			    } catch ( Exception e ) {
 			      throw e;
 			    }
-		   System.out.println("Trip table created successfully");
+		   //System.out.println("Trip table created successfully");
 		   
 		   try {
 			   	  Statement stmt = c.createStatement();
@@ -73,7 +110,7 @@ public class DatabaseInterface {
 			    } catch ( Exception e ) {
 			      throw e;
 			    }
-		   System.out.println("Attractions Table created successfully");
+		   //System.out.println("Attractions Table created successfully");
 		   
 		   try {
 			   	  Statement stmt = c.createStatement();
@@ -88,7 +125,7 @@ public class DatabaseInterface {
 			    } catch ( Exception e ) {
 			      throw e;
 			    }
-		   System.out.println("AttractionsInTrips Table created successfully");
+		   //System.out.println("AttractionsInTrips Table created successfully");
 	    	  
 	    	  
 	      }
@@ -103,7 +140,7 @@ public class DatabaseInterface {
 	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	      System.exit(0);
 	    }
-	    System.out.println("Opened database successfully");
+	    //System.out.println("Opened database successfully");
 	}
 	
 	public ArrayList<Trip> select(Query query)
@@ -181,36 +218,19 @@ public class DatabaseInterface {
 		return returnDate;
 	}
 	
-	/*
-	public String dateToString(Date date)
-	{
-		String stringDate = "";
-		stringDate = date.getDay()+"/"+date.getMonth()+"/"+date.getYear();
-		return stringDate;
-	}
-	
-	public Date stringToDate(String date)
-	{
-		int day = Integer.parseInt(date.substring(0,2));
-		int month = Integer.parseInt(date.substring(3,5));
-		int year = Integer.parseInt(date.substring(6,10));
-		
-		Date returnDate = new Date(day, month, year);
-		return returnDate;
-	}*/
 	
 	
 	public ArrayList<Attraction> findAttractionsInTrip(int trip_id)
 	{
-		System.out.println("");
-		System.out.println("TRIP_ID : " + trip_id);
+		//System.out.println("");
+		//System.out.println("TRIP_ID : " + trip_id);
 		//Sækja öll IDs á attractions sem eru í þessu Trip
 	    ArrayList<Integer> attractionIDs = selectAttractionIDs(trip_id);
-	    System.out.println("Heildar attractionIDS í trippinu length: " + attractionIDs.size());
+	    //System.out.println("Heildar attractionIDS í trippinu length: " + attractionIDs.size());
 	    //Athuga hvaða attractions eru núþegar til í attractionManager
 	    Pair existingAttractions = attractionManager.locateExistingAttractions(attractionIDs);
 	    attractionIDs = existingAttractions.getIds();
-	    System.out.println("attractionIDS í trippinu length eftir minnis check: " + attractionIDs.size());
+	    //System.out.println("attractionIDS í trippinu length eftir minnis check: " + attractionIDs.size());
 	    //Næ í öll attractions sem vantar upp á úr database, sem voru ekki til í attractionManager
 	    ArrayList<Attraction> databaseAttractions = selectAttractions(attractionIDs);
 	    //System.out.println("Attractions sem fást úr database: " + databaseAttractions.size());
@@ -244,7 +264,7 @@ public class DatabaseInterface {
 	    	System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	    	System.exit(0);
 	    }
-	    System.out.println("Returned ID's succesfully!");
+	    //System.out.println("Returned ID's succesfully!");
 	    return ids;	    
 	}
 	
@@ -438,19 +458,7 @@ public class DatabaseInterface {
 					  	"VALUES (1,1), (1,2), (1,3), (2,4), (2,5), (3,6), (3,7), (4,8), (5,3), (5,9), (6,10), (7,11), (8,12), (8,10), (9,10), (10,13), (11,14), (11,12), (11,10), (12,15), (12,12), (12,10) ;";
 			  stmt.executeUpdate(sql);
 			  
-			  
-		      /*
-		      sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) " +
-		            "VALUES (70, 'Allen', 25, 'Texas', 15000.00 );"; 
-		      stmt.executeUpdate(sql);
-
-		      sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) " +
-		            "VALUES (73, 'Teddy', 23, 'Norway', 20000.00 );"; 
-		      stmt.executeUpdate(sql);
-
-		      sql = "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) " +
-		            "VALUES (74, 'Mark', 25, 'Rich-Mond ', 65000.00 );"; 
-		      stmt.executeUpdate(sql);*/
+	
 
 		      stmt.close();
 		      c.commit();
@@ -459,30 +467,8 @@ public class DatabaseInterface {
 		    } catch ( Exception e ) {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 		      System.exit(0);
-		    }
-		
-		
-		try {
-		      
-		      Statement stmt = c.createStatement();
-		      ResultSet rs = stmt.executeQuery( "SELECT * FROM AttractionsInTrips;" );
-		      while ( rs.next() ) {
-		         int id = rs.getInt("ID");
-		         int trip_id = rs.getInt("TRIP_ID");
-		         int attraction_id = rs.getInt("ATTRACTION_ID");
-		         
-		         System.out.println( "ID = " + id );
-		         System.out.println( "TRIP_ID = " + trip_id );
-		         System.out.println( "ATTRACTION_ID = " + attraction_id );
-		         
-		      }
-		      rs.close();
-		      stmt.close();
-		      //c.close();
-		    } catch ( Exception e ) {
-		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-		      System.exit(0);
-		    }
+		    }		
+
 		
 	}
 	

@@ -33,14 +33,9 @@ public class Trip {
 
 	public void init() {
 
-		//attractions = new ArrayList<Attraction>();
-		//attractionIDs = 
+		
 	}
-/*
-	public void addAttratction(Attraction attraction) {
-		this.attractions.add(attraction);
-	}
-*/
+
 	
 	public int getPrice() {
 		return price;
@@ -88,19 +83,7 @@ public class Trip {
 	public void setAttractions(ArrayList<Attraction> attractions) {
 		this.attractions = attractions;
 	}
-/*
-	public ArrayList<Attraction> getAttraction() {
-		return this.attractions;
-	}
 
-	public void setAttraction(Attraction[] attractions) {
-		if (attractions == null)
-			return;
-		for (int i = 0; i < attractions.length; i++) {
-			this.attractions.add(attractions[i]);
-		}
-	}
-*/	
 	public int getId() {
 		return id;
 	}
